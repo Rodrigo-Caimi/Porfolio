@@ -893,6 +893,13 @@ textarea {
   width: 100%;
   margin: 0 auto;
   padding: 0 var(--gutter);
+  /* section global usa align-items:center; sin esto la galería se colapsa */
+  align-items: stretch;
+}
+
+[data-proyecto-gallery] {
+  width: 100%;
+  align-self: stretch;
 }
 
 /* Galería: imagen principal + miniaturas */
