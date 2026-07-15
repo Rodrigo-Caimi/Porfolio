@@ -1115,20 +1115,21 @@ body[data-proyecto-id="3"] .thumb-item img {
   display: block;
 }
 
-/* Proyecto Fotográfico: fotos completas + altura estable */
+/* Proyecto Fotográfico: caja ancha completa + thumbs abajo (sin layout vertical Café) */
 body[data-proyecto-id="4"] .gallery {
-  display: flex !important;
-  flex-direction: column;
-  grid-template-columns: none !important;
+  display: grid !important;
+  grid-template-columns: 1fr !important;
   gap: 20px;
-  max-width: 960px;
-  width: 100%;
+  width: 100% !important;
+  max-width: 960px !important;
   margin: 28px auto 0;
+  box-sizing: border-box;
 }
 
 body[data-proyecto-id="4"] .main-image {
-  position: relative;
-  width: 100%;
+  position: relative !important;
+  width: 100% !important;
+  max-width: none !important;
   height: min(68vh, 620px) !important;
   min-height: 420px !important;
   max-height: 620px !important;
@@ -1144,7 +1145,8 @@ body[data-proyecto-id="4"] .main-image img {
   inset: 0 !important;
   width: 100% !important;
   height: 100% !important;
-  max-height: none;
+  max-width: none !important;
+  max-height: none !important;
   object-fit: contain !important;
   object-position: center center;
   display: block;
@@ -1157,9 +1159,9 @@ body[data-proyecto-id="4"] .thumbnails {
   grid-template-columns: repeat(4, minmax(0, 1fr)) !important;
   grid-template-rows: none !important;
   gap: 14px;
+  width: 100% !important;
   height: auto !important;
   max-height: none !important;
-  align-self: stretch;
 }
 
 body[data-proyecto-id="4"] .thumb-item {
