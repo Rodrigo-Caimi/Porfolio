@@ -1,0 +1,9 @@
+# Video pesado: se hospeda en Google Drive
+Videos/*.mp4
+Videos/*.mov
+Videos/*.avi
+
+# Sistema
+.DS_Store
+Thumbs.db
+.vscode/
