@@ -258,7 +258,7 @@
     }).join('');
 
     container.innerHTML =
-      '<h2>Otros proyectos míos</h2>' +
+      '<h2>Otros proyectos</h2>' +
       '<div class="other-projects-grid">' + cards + '</div>';
   }
 
