@@ -255,8 +255,7 @@ const PROYECTOS = [
     gallery: [
       {
         type: 'drive',
-        // Pegá acá el link de Drive del video (el archivo pesa ~210MB y no entra en GitHub):
-        src: 'PEGAR_LINK_DRIVE_DON_PASCUAL',
+        src: 'https://drive.google.com/file/d/1WydlpYJ0gdyQRTn3j-sHAU-dG0CKaq5O/view?usp=sharing',
         poster: 'IMAGENES/don-pascual-campana.png',
         alt: 'Video campaña Don Pascual Edición Limitada Invierno 2026'
       },
@@ -287,7 +286,7 @@ const PROYECTOS = [
       },
       {
         label: 'Ver video en Drive',
-        href: 'PEGAR_LINK_DRIVE_DON_PASCUAL',
+        href: 'https://drive.google.com/file/d/1WydlpYJ0gdyQRTn3j-sHAU-dG0CKaq5O/view?usp=sharing',
         external: true
       }
     ],
