@@ -465,15 +465,21 @@ section.hero {
 
 .card-wide {
   grid-column: span 7;
-  grid-row: span 1;
-  min-height: 200px;
+  grid-row: span 2;
+  min-height: 320px;
 }
 
 .card-half,
 .card-compact {
   grid-column: span 5;
-  grid-row: span 1;
-  min-height: 200px;
+  grid-row: span 2;
+  min-height: 320px;
+}
+
+.card-pair {
+  grid-column: span 6;
+  grid-row: span 2;
+  min-height: 320px;
 }
 
 .card-large-h {
@@ -531,6 +537,7 @@ section.hero {
 .card-featured .thumb,
 .card-third .thumb,
 .card-tall .thumb,
+.card-pair .thumb,
 .card-vertical .thumb {
   min-height: 0;
 }
@@ -867,6 +874,7 @@ textarea {
   .card-tall,
   .card-compact,
   .card-half,
+  .card-pair,
   .card-vertical {
     grid-column: span 2;
     grid-row: span 1;
@@ -997,6 +1005,7 @@ textarea {
   .card-tall,
   .card-wide,
   .card-half,
+  .card-pair,
   .card-compact,
   .card-large-h,
   .card-vertical,
