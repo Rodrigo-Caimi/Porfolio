@@ -249,16 +249,18 @@ const PROYECTOS = [
     slug: 'proyecto-7.html',
     title: 'Don Pascual',
     cardClass: 'card-third',
-    cardImage: 'IMAGENES/don-pascual-campana.png',
+    cardImage: 'IMAGENES/don-pascual-botella-fuego.png',
     cardAlt: 'Don Pascual - Edición Limitada Invierno 2026',
     galleryContain: true,
     gallery: [
       {
         type: 'drive',
         src: 'https://drive.google.com/file/d/1WydlpYJ0gdyQRTn3j-sHAU-dG0CKaq5O/view?usp=sharing',
-        poster: 'IMAGENES/don-pascual-campana.png',
+        poster: 'IMAGENES/don-pascual-botella-fuego.png',
         alt: 'Video campaña Don Pascual Edición Limitada Invierno 2026'
       },
+      { src: 'IMAGENES/don-pascual-afiche.png', alt: 'Afiche Don Pascual Edición Limitada' },
+      { src: 'IMAGENES/don-pascual-campana.png', alt: 'Mockup terminado campaña Don Pascual' },
       { src: 'IMAGENES/don-pascual-botella.png', alt: 'Botella Don Pascual Chardonnay 2026' },
       { src: 'IMAGENES/don-pascual-etiqueta.jpg', alt: 'Etiqueta con ilustración Don Pascual' },
       { src: 'IMAGENES/don-pascual-omnibus.png', alt: 'Mockup publicidad en ómnibus Don Pascual' }

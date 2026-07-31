@@ -1388,7 +1388,7 @@ body[data-proyecto-id="7"] .main-image video {
 body[data-proyecto-id="5"] .thumbnails,
 body[data-proyecto-id="7"] .thumbnails {
   display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
   gap: 16px;
 }
 
