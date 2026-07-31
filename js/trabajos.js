@@ -75,13 +75,23 @@
 
     if (isDriveItem(first)) {
       const preview = drivePreviewUrl(first.src);
+      const viewUrl = driveViewUrl(first.src);
       const poster = asset(first.poster || '');
-      mainMedia = preview
-        ? '<iframe id="main-media" class="drive-embed" src="' + preview + '" title="' + first.alt + '" allow="autoplay" allowfullscreen></iframe>'
-        : '<a class="drive-fallback" href="#" aria-label="' + first.alt + '">' +
+      if (preview) {
+        mainMedia =
+          '<iframe id="main-media" class="drive-embed" src="' + preview + '" title="' + first.alt + '" allow="autoplay" allowfullscreen></iframe>';
+      } else if (viewUrl) {
+        mainMedia =
+          '<a class="drive-fallback" href="' + viewUrl + '" target="_blank" rel="noopener" aria-label="' + first.alt + '">' +
             '<img id="main-media" class="' + mainClass + '" src="' + poster + '" alt="' + first.alt + '" />' +
-            '<span class="drive-fallback-label">Subí el video a Drive y pegá el link</span>' +
+            '<span class="drive-fallback-label">Ver video en Drive</span>' +
           '</a>';
+      } else {
+        mainMedia =
+          '<div class="drive-fallback">' +
+            '<img id="main-media" class="' + mainClass + '" src="' + poster + '" alt="' + first.alt + '" />' +
+          '</div>';
+      }
     } else if (isVideoItem(first)) {
       mainMedia = '<video id="main-media" class="' + mainClass + '" controls playsinline poster="' + asset(first.poster || '') + '" src="' + asset(first.src) + '"></video>';
     } else {
@@ -129,7 +139,6 @@
         mainWrap.innerHTML =
           '<div class="drive-fallback">' +
             '<img id="main-media" class="' + mainClass + '" src="' + (poster || '') + '" alt="' + (alt || '') + '" />' +
-            '<span class="drive-fallback-label">Subí el video a Drive y pegá el link</span>' +
           '</div>';
       }
       return;
@@ -200,7 +209,9 @@
       const href = action.external ? action.href : asset(action.href);
       const attrs = action.external
         ? ' target="_blank" rel="noopener"'
-        : ' download="' + (action.download || '') + '"';
+        : (action.download
+          ? ' target="_blank" rel="noopener" download="' + (action.download || '') + '"'
+          : ' target="_blank" rel="noopener"');
 
       return (
         '<div style="display:flex;align-items:center;gap:16px;flex-wrap:wrap;">' +

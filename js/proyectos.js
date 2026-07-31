@@ -281,8 +281,8 @@ const PROYECTOS = [
     actions: [
       {
         label: 'Documentación del proyecto',
-        href: 'DOCUMENTOS/DON-PASCUAL-1.pdf',
-        download: 'DON-PASCUAL-1.pdf'
+        href: 'DOCUMENTOS/DON-PASCUAL.pdf',
+        download: 'DON-PASCUAL.pdf'
       },
       {
         label: 'Ver video en Drive',
