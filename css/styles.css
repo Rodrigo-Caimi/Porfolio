@@ -488,8 +488,8 @@ a.card:active {
 
 .card-pair {
   grid-column: span 6;
-  grid-row: span 2;
-  min-height: 320px;
+  grid-row: span 1;
+  min-height: 240px;
 }
 
 .card-large-h {
@@ -547,8 +547,13 @@ a.card:active {
 .card-featured .thumb,
 .card-third .thumb,
 .card-tall .thumb,
-.card-pair .thumb,
 .card-vertical .thumb {
+  min-height: 0;
+}
+
+.card-pair .thumb {
+  flex: 0 0 auto;
+  aspect-ratio: 16 / 7;
   min-height: 0;
 }
 
