@@ -205,5 +205,44 @@ const PROYECTOS = [
       }
     ],
     related: [1, 2]
+  },
+  {
+    id: 6,
+    slug: 'proyecto-6.html',
+    title: 'Noir Estudio',
+    cardClass: 'card-third',
+    cardImage: 'IMAGENES/noir-interior.png',
+    cardAlt: 'Noir Estudio - Identidad de marca',
+    galleryContain: true,
+    gallery: [
+      { src: 'IMAGENES/noir-interior.png', alt: 'Interior Noir Barbería & Estilo' },
+      { src: 'IMAGENES/noir-herramientas.png', alt: 'Herramientas y productos Noir Estudio' },
+      { src: 'IMAGENES/noir-productos.png', alt: 'Línea de coloración Noir Estudio' },
+      { src: 'IMAGENES/noir-experiencia.png', alt: 'Experiencia Noir Estudio' }
+    ],
+    processTitle: 'Proceso del proyecto',
+    process: [
+      {
+        title: 'Concepto de marca',
+        text: 'Noir Estudio nace como una barbería & estilo de estética premium. Se buscó una identidad oscura, elegante y contemporánea, con tipografía limpia y una paleta de negros, carbón y acentos dorados que transmiten exclusividad.'
+      },
+      {
+        title: 'Diseño en Figma',
+        text: 'En Figma se construyó el sistema visual: logo, aplicaciones de marca, mockups de productos, ambientación del local y piezas de comunicación. Cada soporte se diseñó para mantener coherencia entre el espacio físico y la experiencia de marca.'
+      },
+      {
+        title: 'Resultado',
+        text: 'Un universo de marca completo para Noir Estudio, con identidad aplicada a interiorismo, packaging y herramientas profesionales. El sistema comunica sofisticación y precisión en cada detalle del servicio.'
+      }
+    ],
+    actions: [
+      {
+        label: 'Ver prototipo en Figma',
+        // Pegá acá el link de Figma (prototype o archivo):
+        href: 'PEGAR_LINK_FIGMA',
+        external: true
+      }
+    ],
+    related: [3, 1]
   }
 ];
