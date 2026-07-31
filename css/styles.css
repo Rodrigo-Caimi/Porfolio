@@ -418,6 +418,16 @@ section.hero {
   animation: cardIn 0.55s ease backwards;
   width: auto;
   height: auto;
+  color: var(--fg);
+  text-decoration: none;
+}
+
+a.card:link,
+a.card:visited,
+a.card:hover,
+a.card:active {
+  color: var(--fg);
+  text-decoration: none;
 }
 
 .card:nth-child(1) { animation-delay: 0.05s; }
@@ -576,6 +586,7 @@ section.hero {
   letter-spacing: normal;
   background: transparent;
   border-top: none;
+  color: var(--fg);
 }
 
 .card-body::after {
@@ -1714,6 +1725,15 @@ footer {
   transition: transform .3s ease, border-color .3s ease, box-shadow .3s ease;
   display: flex;
   flex-direction: column;
+  text-decoration: none;
+  color: var(--fg);
+}
+
+a.other-project-card:link,
+a.other-project-card:visited,
+a.other-project-card:hover,
+a.other-project-card:active {
+  color: var(--fg);
   text-decoration: none;
 }
 
