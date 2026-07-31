@@ -426,6 +426,7 @@ section.hero {
 .card:nth-child(4) { animation-delay: 0.26s; }
 .card:nth-child(5) { animation-delay: 0.33s; }
 .card:nth-child(6) { animation-delay: 0.40s; }
+.card:nth-child(7) { animation-delay: 0.47s; }
 
 @keyframes cardIn {
   from {
@@ -1105,7 +1106,8 @@ body[data-proyecto-id="2"] .work-detail-hero,
 body[data-proyecto-id="3"] .work-detail-hero,
 body[data-proyecto-id="4"] .work-detail-hero,
 body[data-proyecto-id="5"] .work-detail-hero,
-body[data-proyecto-id="6"] .work-detail-hero {
+body[data-proyecto-id="6"] .work-detail-hero,
+body[data-proyecto-id="7"] .work-detail-hero {
   padding-top: 48px !important;
 }
 
@@ -1350,21 +1352,25 @@ body[data-proyecto-id="6"] .thumb-item img {
   }
 }
 
-/* Campaña Reel ORT: más ancho (sin subir la altura) */
+/* Campaña Reel ORT + Don Pascual: más ancho (sin subir la altura) */
 body[data-proyecto-id="5"] .work-detail-hero,
-body[data-proyecto-id="5"] .golden-section {
+body[data-proyecto-id="5"] .golden-section,
+body[data-proyecto-id="7"] .work-detail-hero,
+body[data-proyecto-id="7"] .golden-section {
   max-width: min(1600px, 96vw);
   width: 100%;
   padding-left: clamp(16px, 3vw, 40px);
   padding-right: clamp(16px, 3vw, 40px);
 }
 
-body[data-proyecto-id="5"] .gallery {
+body[data-proyecto-id="5"] .gallery,
+body[data-proyecto-id="7"] .gallery {
   grid-template-columns: 1fr;
   gap: 20px;
 }
 
-body[data-proyecto-id="5"] .main-image {
+body[data-proyecto-id="5"] .main-image,
+body[data-proyecto-id="7"] .main-image {
   width: 100%;
   height: 640px;
   min-height: 0;
@@ -1372,64 +1378,77 @@ body[data-proyecto-id="5"] .main-image {
 }
 
 body[data-proyecto-id="5"] .main-image img,
-body[data-proyecto-id="5"] .main-image video {
+body[data-proyecto-id="5"] .main-image video,
+body[data-proyecto-id="7"] .main-image img,
+body[data-proyecto-id="7"] .main-image video {
   object-fit: contain;
   background: #151515;
 }
 
-body[data-proyecto-id="5"] .thumbnails {
+body[data-proyecto-id="5"] .thumbnails,
+body[data-proyecto-id="7"] .thumbnails {
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
   gap: 16px;
 }
 
-body[data-proyecto-id="5"] .thumb-item {
+body[data-proyecto-id="5"] .thumb-item,
+body[data-proyecto-id="7"] .thumb-item {
   border-radius: 14px;
   width: 100%;
 }
 
-body[data-proyecto-id="5"] .thumb-item img {
+body[data-proyecto-id="5"] .thumb-item img,
+body[data-proyecto-id="7"] .thumb-item img {
   width: 100%;
   height: 120px;
   object-fit: cover;
 }
 
-body[data-proyecto-id="5"] .golden-vertical {
+body[data-proyecto-id="5"] .golden-vertical,
+body[data-proyecto-id="7"] .golden-vertical {
   gap: 18px;
   width: 100%;
 }
 
-body[data-proyecto-id="5"] .golden-vertical .golden-item {
+body[data-proyecto-id="5"] .golden-vertical .golden-item,
+body[data-proyecto-id="7"] .golden-vertical .golden-item {
   width: 100%;
   border-radius: 16px;
   padding: 22px 36px;
 }
 
-body[data-proyecto-id="5"] .golden-vertical .golden-item h3 {
+body[data-proyecto-id="5"] .golden-vertical .golden-item h3,
+body[data-proyecto-id="7"] .golden-vertical .golden-item h3 {
   font-size: 22px;
   margin-bottom: 10px;
 }
 
-body[data-proyecto-id="5"] .golden-vertical .golden-item p {
+body[data-proyecto-id="5"] .golden-vertical .golden-item p,
+body[data-proyecto-id="7"] .golden-vertical .golden-item p {
   font-size: 17px;
   line-height: 1.65;
   max-width: none;
 }
 
 @media (max-width: 920px) {
-  body[data-proyecto-id="5"] .main-image {
+  body[data-proyecto-id="5"] .main-image,
+  body[data-proyecto-id="7"] .main-image {
     height: 520px;
   }
 
-  body[data-proyecto-id="5"] .thumbnails {
+  body[data-proyecto-id="5"] .thumbnails,
+  body[data-proyecto-id="7"] .thumbnails {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
-  body[data-proyecto-id="5"] .thumb-item img {
+  body[data-proyecto-id="5"] .thumb-item img,
+  body[data-proyecto-id="7"] .thumb-item img {
     height: 100px;
   }
 
-  body[data-proyecto-id="5"] .golden-vertical .golden-item {
+  body[data-proyecto-id="5"] .golden-vertical .golden-item,
+  body[data-proyecto-id="7"] .golden-vertical .golden-item {
     padding: 18px 20px;
   }
 }

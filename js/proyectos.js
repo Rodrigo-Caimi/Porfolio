@@ -243,5 +243,54 @@ const PROYECTOS = [
       }
     ],
     related: [3, 1]
+  },
+  {
+    id: 7,
+    slug: 'proyecto-7.html',
+    title: 'Don Pascual',
+    cardClass: 'card-third',
+    cardImage: 'IMAGENES/don-pascual-campana.png',
+    cardAlt: 'Don Pascual - Edición Limitada Invierno 2026',
+    galleryContain: true,
+    gallery: [
+      {
+        type: 'drive',
+        // Pegá acá el link de Drive del video (el archivo pesa ~210MB y no entra en GitHub):
+        src: 'PEGAR_LINK_DRIVE_DON_PASCUAL',
+        poster: 'IMAGENES/don-pascual-campana.png',
+        alt: 'Video campaña Don Pascual Edición Limitada Invierno 2026'
+      },
+      { src: 'IMAGENES/don-pascual-botella.png', alt: 'Botella Don Pascual Chardonnay 2026' },
+      { src: 'IMAGENES/don-pascual-etiqueta.jpg', alt: 'Etiqueta con ilustración Don Pascual' },
+      { src: 'IMAGENES/don-pascual-omnibus.png', alt: 'Mockup publicidad en ómnibus Don Pascual' }
+    ],
+    processTitle: 'Proceso del proyecto',
+    process: [
+      {
+        title: 'Campaña y concepto',
+        text: 'Campaña publicitaria para la Edición Limitada Invierno 2026 de vino blanco Don Pascual. Se trabajó una narrativa cálida y premium: reinterpretación de logo, etiqueta con ilustración y un video promocional que comunica la experiencia de la cosecha especial.'
+      },
+      {
+        title: 'Producción con IA',
+        text: 'Las imágenes se generaron con ChatGPT. El video se creó en Runway, la música en Suno y los diálogos en ElevenLabs. El flujo combina generación de piezas fijas, movimiento, audio y voz para construir la campaña completa.'
+      },
+      {
+        title: 'Resultado',
+        text: 'Un sistema de piezas para la edición limitada: etiqueta ilustrada, aplicaciones de marca y video publicitario. La campaña conecta el producto con una atmósfera de invierno íntima y contemporánea.'
+      }
+    ],
+    actions: [
+      {
+        label: 'Documentación del proyecto',
+        href: 'DOCUMENTOS/DON-PASCUAL.pdf',
+        download: 'DON-PASCUAL.pdf'
+      },
+      {
+        label: 'Ver video en Drive',
+        href: 'PEGAR_LINK_DRIVE_DON_PASCUAL',
+        external: true
+      }
+    ],
+    related: [5, 6]
   }
 ];
