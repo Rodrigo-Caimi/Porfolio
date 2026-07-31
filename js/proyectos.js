@@ -281,8 +281,8 @@ const PROYECTOS = [
     actions: [
       {
         label: 'Documentación del proyecto',
-        href: 'DOCUMENTOS/DON-PASCUAL.pdf',
-        download: 'DON-PASCUAL.pdf'
+        href: 'DOCUMENTOS/DON-PASCUAL-1.pdf',
+        download: 'DON-PASCUAL-1.pdf'
       },
       {
         label: 'Ver video en Drive',
@@ -290,6 +290,6 @@ const PROYECTOS = [
         external: true
       }
     ],
-    related: [5, 6]
+    related: [6, 5]
   }
 ];
