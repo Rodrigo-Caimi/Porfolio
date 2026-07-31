@@ -237,9 +237,8 @@ const PROYECTOS = [
     ],
     actions: [
       {
-        label: 'Ver prototipo en Figma',
-        // Pegá acá el link de Figma (prototype o archivo):
-        href: 'PEGAR_LINK_FIGMA',
+        label: 'Ver diseño en Figma',
+        href: 'https://www.figma.com/design/NUjf3slMWEIzsOJaHKwF4n/Noir-Estudio?node-id=321-15&t=XFBXzoCxvzPb1thY-1',
         external: true
       }
     ],
