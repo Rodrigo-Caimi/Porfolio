@@ -107,8 +107,8 @@ const PROYECTOS = [
     actions: [
       {
         label: 'Documentación del proyecto',
-        href: 'DOCUMENTOS/Totem%20de%20Café.pdf',
-        download: 'Totem-de-Café.pdf'
+        href: 'DOCUMENTOS/Totem-porfolio.pdf',
+        download: 'Totem-porfolio.pdf'
       },
       {
         label: 'Ver prototipo en Figma',
