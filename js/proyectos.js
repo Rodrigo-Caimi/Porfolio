@@ -150,8 +150,8 @@ const PROYECTOS = [
     actions: [
       {
         label: 'Documentación del proyecto',
-        href: 'DOCUMENTOS/PROYECTO FOTOGRAFICO.pdf',
-        download: 'PROYECTO-FOTOGRAFICO.pdf'
+        href: 'DOCUMENTOS/Proyecto%20fotografico.pdf',
+        download: 'Proyecto-fotografico.pdf'
       }
     ],
     related: [1, 3]
