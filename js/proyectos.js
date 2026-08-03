@@ -194,9 +194,9 @@ const PROYECTOS = [
     ],
     actions: [
       {
-        label: 'Mini brief ORT',
-        href: 'DOCUMENTOS/MINI BRIEF ORT.pdf',
-        download: 'MINI-BRIEF-ORT.pdf'
+        label: 'Documentación del proyecto',
+        href: 'DOCUMENTOS/ORT-porfolio.pdf',
+        download: 'ORT-porfolio.pdf'
       },
       {
         label: 'Ver reel en Drive',
