@@ -42,7 +42,7 @@
     slug: 'proyecto-2.html',
     title: 'Mayo Amarillo',
     cardClass: 'card-pair',
-    cardImage: 'IMAGENES/Afiche-de-campana.webp',
+    cardImage: 'IMAGENES/mayo-amarillo-card.jpg',
     cardAlt: 'Mayo Amarillo - Campaña',
     galleryContain: true,
     gallery: [
@@ -161,7 +161,7 @@
     slug: 'proyecto-5.html',
     title: 'Campaña Reel ORT',
     cardClass: 'card-pair',
-    cardImage: 'IMAGENES/Frame1 Final (2).png',
+    cardImage: 'IMAGENES/ort-reel-card.jpg',
     cardAlt: 'Campaña Reel ORT',
     galleryContain: true,
     gallery: [
@@ -254,7 +254,7 @@
     slug: 'proyecto-7.html',
     title: 'Don Pascual',
     cardClass: 'card-third',
-    cardImage: 'IMAGENES/don-pascual-botella-fuego.png',
+    cardImage: 'IMAGENES/don-pascual-card.jpg',
     cardAlt: 'Don Pascual - Edición Limitada Invierno 2026',
     galleryContain: true,
     gallery: [
