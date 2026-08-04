@@ -1,14 +1,6 @@
 ﻿<!DOCTYPE html>
 <html lang="es" data-asset-base="./">
 <head>
-  <!-- Google Tag Manager -->
-  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-  })(window,document,'script','dataLayer','GTM-TQRMFVGJ');</script>
-  <!-- End Google Tag Manager -->
-  
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Rodrigo Caimi — Portafolio</title>
@@ -17,17 +9,11 @@
   <meta property="og:description" content="Portafolio de Rodrigo Caimi: diseño UX/UI, investigación, wireframing y prototipado.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="dns-prefetch" href="https://fonts.googleapis.com">
-  <link rel="dns-prefetch" href="https://fonts.gstatic.com">
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="./css/styles.css?v=20260804f">
+  <link rel="preload" as="image" href="./IMAGENES/Principal-hero.jpg" fetchpriority="high">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./css/styles.css?v=20260804g">
 </head>
 <body>
-  <!-- Google Tag Manager (noscript) -->
-  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TQRMFVGJ"
-  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-  <!-- End Google Tag Manager (noscript) -->
-  
   <header>
     <div class="header-inner">
       <div class="logo">
@@ -78,7 +64,16 @@
           <a class="btn btn-secondary" href="./DOCUMENTOS/CV%20RODRIGO.pdf" download="CV-RODRIGO.pdf">Descarga mi CV</a>
         </div>
       </div>
-      <div class="hero-image"></div>
+      <div class="hero-image">
+        <img
+          src="./IMAGENES/Principal-hero.jpg"
+          alt="Rodrigo Caimi"
+          width="900"
+          height="1200"
+          fetchpriority="high"
+          decoding="async"
+        />
+      </div>
     </section>
 
     <section id="trabajos">
@@ -160,11 +155,27 @@
       <div class="spacer"></div>
     </div>
   </footer>
-  <script src="./js/nav.js?v=20260804f"></script>
-  <script src="./js/proyectos.js?v=20260804f"></script>
-  <script src="./js/trabajos.js?v=20260804f"></script>
-  <!-- Start of HubSpot Embed Code -->
-  <script type="text/javascript" id="hs-script-loader" async defer src="//js.hs-scripts.com/50645247.js"></script>
-  <!-- End of HubSpot Embed Code -->
+  <script src="./js/nav.js?v=20260804g" defer></script>
+  <script src="./js/proyectos.js?v=20260804g" defer></script>
+  <script src="./js/trabajos.js?v=20260804g" defer></script>
+  <script>
+    window.addEventListener('load', function () {
+      setTimeout(function () {
+        var gtm = document.createElement('script');
+        gtm.async = true;
+        gtm.src = 'https://www.googletagmanager.com/gtm.js?id=GTM-TQRMFVGJ';
+        document.head.appendChild(gtm);
+        window.dataLayer = window.dataLayer || [];
+        window.dataLayer.push({ 'gtm.start': Date.now(), event: 'gtm.js' });
+
+        var hs = document.createElement('script');
+        hs.id = 'hs-script-loader';
+        hs.async = true;
+        hs.defer = true;
+        hs.src = 'https://js.hs-scripts.com/50645247.js';
+        document.body.appendChild(hs);
+      }, 1800);
+    });
+  </script>
 </body>
 </html>
