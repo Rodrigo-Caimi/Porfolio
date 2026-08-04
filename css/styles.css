@@ -844,6 +844,19 @@ a.card:active {
   text-align: center;
 }
 
+.contact-error {
+  max-width: 900px;
+  width: 100%;
+  margin: 0 auto 18px;
+  padding: 14px 18px;
+  border-radius: 12px;
+  background: rgba(180, 60, 60, 0.08);
+  border: 1px solid rgba(180, 60, 60, 0.28);
+  color: #8a2f2f;
+  font-weight: 600;
+  text-align: center;
+}
+
 .contact-honey {
   position: absolute;
   left: -9999px;
