@@ -211,7 +211,7 @@
     slug: 'proyecto-6.html',
     title: 'Noir Estudio',
     cardClass: 'card-third',
-    cardImage: 'IMAGENES/noir-interior.png',
+    cardImage: 'IMAGENES/noir-interior-card.jpg',
     cardAlt: 'Noir Estudio - Identidad de marca',
     galleryContain: true,
     gallery: [
