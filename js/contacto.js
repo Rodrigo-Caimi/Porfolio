@@ -66,7 +66,7 @@
           throw new Error((result.payload && result.payload.message) || ('Error ' + result.status));
         }
         form.reset();
-        show(success, '¡Mensaje enviado! Te voy a responder a la brevedad.');
+        show(success, '¡Mensaje enviado con éxito!!');
         if (success) success.scrollIntoView({ behavior: 'smooth', block: 'center' });
       })
       .catch(function () {
