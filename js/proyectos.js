@@ -1,4 +1,4 @@
-const PROYECTOS = [
+﻿const PROYECTOS = [
   {
     id: 1,
     slug: 'proyecto-1.html',
@@ -69,8 +69,8 @@ const PROYECTOS = [
     actions: [
       {
         label: 'Información de la campaña',
-        href: 'DOCUMENTOS/Mayo%20Amarillo.pdf',
-        download: 'Mayo-Amarillo-campaña.pdf'
+        href: 'DOCUMENTOS/Mayo-amarillo-porfolio.pdf',
+        download: 'Mayo-amarillo-porfolio.pdf'
       }
     ],
     related: [1, 4]
