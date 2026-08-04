@@ -1666,7 +1666,7 @@ footer {
 
 .about-intro {
   max-width: 700px;
-  margin: 0 auto 80px;
+  margin: 0 auto 48px;
   text-align: center;
 }
 
@@ -1675,6 +1675,51 @@ footer {
   line-height: 1.8;
   color: var(--fg);
   margin: 0;
+}
+
+.availability-card {
+  max-width: 720px;
+  margin: 0 auto 72px;
+  padding: 36px 32px;
+  text-align: center;
+  background: linear-gradient(160deg, rgba(107, 140, 114, 0.10), rgba(255, 250, 240, 0.4));
+  border: 1px solid rgba(107, 140, 114, 0.28);
+  border-radius: 24px;
+}
+
+.availability-eyebrow {
+  margin: 0 0 10px;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--brand);
+}
+
+.availability-card h2 {
+  margin: 0 0 16px;
+  font-size: clamp(28px, 4vw, 36px);
+  line-height: 1.2;
+  color: var(--fg);
+}
+
+.availability-card p {
+  margin: 0 auto 14px;
+  max-width: 560px;
+  font-size: 18px;
+  line-height: 1.65;
+  color: var(--fg);
+}
+
+.availability-note {
+  color: var(--muted) !important;
+  font-size: 16px !important;
+  margin-bottom: 24px !important;
+}
+
+.availability-card .btn {
+  display: inline-flex;
+  margin-top: 4px;
 }
 
 .tools-horizontal {

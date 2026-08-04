@@ -89,19 +89,23 @@
       { src: 'IMAGENES/METODO-DE-PAGO CAFE.png', alt: 'Pago Totem de Café' },
       { src: 'IMAGENES/COMPRACAFE.png', alt: 'Gracias por su compra Totem de Café' }
     ],
-    processTitle: 'Diseño de experiencia',
+    processTitle: 'Cómo se pensó este proyecto',
     process: [
       {
-        title: 'Objetivo',
-        text: 'Crear una experiencia digital intuitiva que mejore la interacción de los clientes, facilitando la visualización del menú y la gestión de pedidos de manera eficiente, mejorando cada punto de contacto entre cliente y cafetería.'
+        title: 'Problema',
+        text: 'En una cafetería, el pedido en mostrador genera filas, dudas sobre el menú y fricción al pagar. Hacía falta una interfaz de totem clara para elegir, confirmar y pagar sin depender de una explicación oral.'
       },
       {
-        title: 'Metodología',
-        text: 'Investigación de usuarios y diseño centrado en la usabilidad, prototipado interactivo en Figma con iteraciones basadas en feedback constante, garantizando una interfaz clara, funcional y accesible para todos.'
+        title: 'Mi rol',
+        text: 'Diseñé la experiencia de punta a punta: flujos de usuario, arquitectura de pantallas, prototipo interactivo en Figma y criterios de usabilidad para menú, recarga y métodos de pago.'
+      },
+      {
+        title: 'Decisión clave',
+        text: 'Prioricé un recorrido lineal y predecible (menú → pedido → pago → confirmación) en lugar de un menú denso con muchas opciones a la vez. Menos carga cognitiva, más velocidad en el totem.'
       },
       {
         title: 'Resultado',
-        text: 'Un totem digital con interfaz moderna que permite navegar intuitivamente, realizando pedidos con facilidad y mejorando significativamente la experiencia del cliente. Un sistema completo que optimiza el flujo de compra y atención.'
+        text: 'Un prototipo navegable que demuestra un pedido completo en pocos pasos, con pantallas consistentes y un flujo listo para validar con usuarios reales o pasar a desarrollo.'
       }
     ],
     actions: [
@@ -220,19 +224,23 @@
       { src: 'IMAGENES/noir-productos.png', alt: 'Línea de coloración Noir Estudio' },
       { src: 'IMAGENES/noir-experiencia.png', alt: 'Experiencia Noir Estudio' }
     ],
-    processTitle: 'Proceso del proyecto',
+    processTitle: 'Cómo se pensó este proyecto',
     process: [
       {
-        title: 'Concepto de marca',
-        text: 'Noir Estudio nace como una barbería & estilo de estética premium. Se buscó una identidad oscura, elegante y contemporánea, con tipografía limpia y una paleta de negros, carbón y acentos dorados que transmiten exclusividad.'
+        title: 'Problema',
+        text: 'Noir Estudio necesitaba una identidad premium para barbería & estilo: verse exclusivo sin perder claridad en local, packaging y comunicación. El riesgo era caer en un look genérico “oscuro” sin sistema.'
       },
       {
-        title: 'Diseño en Figma',
-        text: 'En Figma se construyó el sistema visual: logo, aplicaciones de marca, mockups de productos, ambientación del local y piezas de comunicación. Cada soporte se diseñó para mantener coherencia entre el espacio físico y la experiencia de marca.'
+        title: 'Mi rol',
+        text: 'Definí el concepto de marca y construí el sistema visual en Figma: logo, aplicaciones, mockups de productos, ambientación del espacio y piezas de comunicación con una misma lógica tipográfica y cromática.'
+      },
+      {
+        title: 'Decisión clave',
+        text: 'Elegí una paleta de negros/carbón con acentos dorados y tipografía limpia, en vez de sobrecargar con texturas o efectos. La sobriedad sostiene la percepción premium y escala mejor a distintos soportes.'
       },
       {
         title: 'Resultado',
-        text: 'Un universo de marca completo para Noir Estudio, con identidad aplicada a interiorismo, packaging y herramientas profesionales. El sistema comunica sofisticación y precisión en cada detalle del servicio.'
+        text: 'Un universo de marca coherente entre interior, productos y piezas gráficas, listo para presentarse como caso de estudio y para iterar aplicaciones reales del local.'
       }
     ],
     actions: [
