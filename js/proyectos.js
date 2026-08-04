@@ -237,6 +237,11 @@
     ],
     actions: [
       {
+        label: 'Documentación del proyecto',
+        href: 'DOCUMENTOS/Noir-estudio-porfolio.pdf',
+        download: 'Noir-estudio-porfolio.pdf'
+      },
+      {
         label: 'Ver diseño en Figma',
         href: 'https://www.figma.com/design/NUjf3slMWEIzsOJaHKwF4n/Noir-Estudio?node-id=321-15&t=XFBXzoCxvzPb1thY-1',
         external: true
