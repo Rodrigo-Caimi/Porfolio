@@ -831,6 +831,28 @@ a.card:active {
   margin-bottom: 24px;
 }
 
+.contact-success {
+  max-width: 900px;
+  width: 100%;
+  margin: 0 auto 18px;
+  padding: 14px 18px;
+  border-radius: 12px;
+  background: rgba(107, 140, 114, 0.12);
+  border: 1px solid rgba(107, 140, 114, 0.35);
+  color: var(--brand);
+  font-weight: 600;
+  text-align: center;
+}
+
+.contact-honey {
+  position: absolute;
+  left: -9999px;
+  opacity: 0;
+  height: 0;
+  width: 0;
+  pointer-events: none;
+}
+
 form {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -838,6 +860,7 @@ form {
   max-width: 900px;
   width: 100%;
   font-size: 20px;
+  position: relative;
 }
 
 form .full {

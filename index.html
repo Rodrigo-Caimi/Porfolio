@@ -13,7 +13,7 @@
   <link rel="preload" as="image" href="./IMAGENES/Principal-hero.jpg" media="(min-width: 921px)" fetchpriority="high">
   <link rel="preload" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;700&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
   <noscript><link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;700&display=swap" rel="stylesheet"></noscript>
-  <link rel="stylesheet" href="./css/styles.css?v=20260804h">
+  <link rel="stylesheet" href="./css/styles.css?v=20260804i">
   <style>
     html,body{margin:0;background:#FFFAF0;color:#1C1C1C;font-family:'DM Sans',system-ui,sans-serif}
     .hero-image{background:#EAE4D6}
@@ -148,13 +148,17 @@
     <section id="contacto">
       <h2>Contacto</h2>
       <p style="max-width:600px;text-align:center;font-size:18px;margin-bottom:22px;color:var(--muted)">Si te interesa colaborar o conocer más sobre mi trabajo, no dudes en contactarme. Estoy abierto a nuevas oportunidades y proyectos creativos.</p>
-      <form id="hubspot-form" name="contact-form" method="POST" netlify>
-        <div><input type="text" name="firstname" placeholder="Tu nombre" required /></div>
+      <p id="contact-success" class="contact-success" hidden>¡Mensaje enviado! Te voy a responder a la brevedad.</p>
+      <form id="contact-form" action="https://formsubmit.co/ds.rodrigocaimi@gmail.com" method="POST">
+        <input type="hidden" name="_subject" value="Nuevo mensaje — Portafolio Rodrigo Caimi">
+        <input type="hidden" name="_captcha" value="false">
+        <input type="hidden" name="_template" value="table">
+        <input type="hidden" name="_next" value="https://rodrigo-caimi.github.io/Porfolio/?contacto=ok#contacto">
+        <input type="text" name="_honey" tabindex="-1" autocomplete="off" aria-hidden="true" class="contact-honey">
 
+        <div><input type="text" name="nombre" placeholder="Tu nombre" required /></div>
         <div><input type="email" name="email" placeholder="tu@email.com" required /></div>
-
-        <div class="full"><textarea name="message" placeholder="Tu mensaje" required></textarea></div>
-
+        <div class="full"><textarea name="mensaje" placeholder="Tu mensaje" required></textarea></div>
         <div class="full contact-actions"><button type="submit" class="btn btn-primary">Enviar</button></div>
       </form>
     </section>
@@ -164,9 +168,10 @@
       <div class="spacer"></div>
     </div>
   </footer>
-  <script src="./js/nav.js?v=20260804h" defer></script>
-  <script src="./js/proyectos.js?v=20260804h" defer></script>
-  <script src="./js/trabajos.js?v=20260804h" defer></script>
+  <script src="./js/nav.js?v=20260804i" defer></script>
+  <script src="./js/proyectos.js?v=20260804i" defer></script>
+  <script src="./js/trabajos.js?v=20260804i" defer></script>
+  <script src="./js/contacto.js?v=20260804i" defer></script>
   <script>
     window.addEventListener('load', function () {
       setTimeout(function () {
