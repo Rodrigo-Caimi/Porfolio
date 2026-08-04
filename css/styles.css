@@ -991,7 +991,12 @@ textarea {
 
   .hero-image {
     justify-self: center;
-    width: min(420px, 85vw);
+    width: min(280px, 68vw);
+  }
+
+  section.hero {
+    min-height: auto;
+    padding: 28px 0 36px;
   }
 
   .hero h1 {
