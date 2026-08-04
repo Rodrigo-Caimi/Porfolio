@@ -3,7 +3,8 @@
     id: 1,
     slug: 'proyecto-1.html',
     title: 'Horizonte',
-    cardClass: 'card-third',
+    category: 'Branding',
+    cardClass: 'card-pair',
     cardImage: 'IMAGENES/horizonte-imagen-principal.png',
     cardAlt: 'Horizonte - Creación de marca',
     galleryContain: false,
@@ -41,6 +42,7 @@
     id: 2,
     slug: 'proyecto-2.html',
     title: 'Mayo Amarillo',
+    category: 'Campaña',
     cardClass: 'card-pair',
     cardImage: 'IMAGENES/mayo-amarillo-card.jpg',
     cardAlt: 'Mayo Amarillo - Campaña',
@@ -79,9 +81,12 @@
     id: 3,
     slug: 'proyecto-3.html',
     title: 'Totem de Café',
-    cardClass: 'card-pair',
+    category: 'UX/UI',
+    cardClass: 'card-third',
     cardImage: 'IMAGENES/TOTEM-CAFE.png',
     cardAlt: 'Totem de Café - Interfaz digital',
+    role: 'Diseño UX/UI end-to-end: flujos, pantallas y prototipo interactivo',
+    tools: 'Figma',
     galleryContain: true,
     gallery: [
       { src: 'IMAGENES/TOTEM-CAFE.png', alt: 'Totem de Café - Menú principal' },
@@ -126,6 +131,7 @@
     id: 4,
     slug: 'proyecto-4.html',
     title: 'Proyecto Fotográfico',
+    category: 'Fotografía',
     cardClass: 'card-pair',
     cardImage: 'IMAGENES/fotografia cerveza.jpg',
     cardAlt: 'Proyecto Fotográfico',
@@ -164,6 +170,7 @@
     id: 5,
     slug: 'proyecto-5.html',
     title: 'Campaña Reel ORT',
+    category: 'Audiovisual',
     cardClass: 'card-pair',
     cardImage: 'IMAGENES/ort-reel-card.jpg',
     cardAlt: 'Campaña Reel ORT',
@@ -214,9 +221,12 @@
     id: 6,
     slug: 'proyecto-6.html',
     title: 'Noir Estudio',
+    category: 'Branding',
     cardClass: 'card-third',
     cardImage: 'IMAGENES/noir-interior-card.jpg',
     cardAlt: 'Noir Estudio - Identidad de marca',
+    role: 'Dirección de identidad: concepto, sistema visual y aplicaciones',
+    tools: 'Figma',
     galleryContain: true,
     gallery: [
       { src: 'IMAGENES/noir-interior.png', alt: 'Interior Noir Barbería & Estilo' },
@@ -261,9 +271,12 @@
     id: 7,
     slug: 'proyecto-7.html',
     title: 'Don Pascual',
+    category: 'Campaña',
     cardClass: 'card-third',
     cardImage: 'IMAGENES/don-pascual-card.jpg',
     cardAlt: 'Don Pascual - Edición Limitada Invierno 2026',
+    role: 'Campaña integral: concepto, piezas fijas, video y audio',
+    tools: 'ChatGPT, Runway, Suno, ElevenLabs',
     galleryContain: true,
     gallery: [
       {
@@ -278,19 +291,23 @@
       { src: 'IMAGENES/don-pascual-etiqueta.jpg', alt: 'Etiqueta con ilustración Don Pascual' },
       { src: 'IMAGENES/don-pascual-omnibus.png', alt: 'Mockup publicidad en ómnibus Don Pascual' }
     ],
-    processTitle: 'Proceso del proyecto',
+    processTitle: 'Cómo se pensó este proyecto',
     process: [
       {
-        title: 'Campaña y concepto',
-        text: 'Campaña publicitaria para la Edición Limitada Invierno 2026 de vino blanco Don Pascual. Se trabajó una narrativa cálida y premium: reinterpretación de logo, etiqueta con ilustración y un video promocional que comunica la experiencia de la cosecha especial.'
+        title: 'Problema',
+        text: 'La Edición Limitada Invierno 2026 de Don Pascual necesitaba una campaña premium coherente: etiqueta, video y piezas de comunicación con una misma atmósfera, sin parecer un collage de herramientas distintas.'
       },
       {
-        title: 'Producción con IA',
-        text: 'Las imágenes se generaron con ChatGPT. El video se creó en Runway, la música en Suno y los diálogos en ElevenLabs. El flujo combina generación de piezas fijas, movimiento, audio y voz para construir la campaña completa.'
+        title: 'Mi rol',
+        text: 'Definí el concepto creativo y produje el sistema de campaña: reinterpretación de marca, etiqueta ilustrada, afiche, aplicaciones y video promocional con música y voces alineadas al tono.'
+      },
+      {
+        title: 'Decisión clave',
+        text: 'Prioricé una narrativa cálida de invierno —íntima y contemporánea— y usé IA solo donde aceleraba producción (imagen, movimiento, audio), manteniendo dirección creativa y coherencia visual en todas las piezas.'
       },
       {
         title: 'Resultado',
-        text: 'Un sistema de piezas para la edición limitada: etiqueta ilustrada, aplicaciones de marca y video publicitario. La campaña conecta el producto con una atmósfera de invierno íntima y contemporánea.'
+        text: 'Un set de campaña listo para presentar: etiqueta, mockups de marca, piezas gráficas y video publicitario que conectan el producto con una atmósfera de cosecha especial.'
       }
     ],
     actions: [

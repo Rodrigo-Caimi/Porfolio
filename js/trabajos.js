@@ -16,7 +16,7 @@
   function renderWorkGrid(container) {
     if (!container) return;
 
-    const layoutOrder = [1, 6, 7, 2, 5, 4, 3];
+    const layoutOrder = [6, 7, 3, 5, 1, 2, 4];
     const ordered = layoutOrder
       .map(function (id) { return getProyecto(id); })
       .filter(Boolean);
@@ -25,12 +25,22 @@
       const thumb = proyecto.cardImage
         ? '<img loading="lazy" alt="' + proyecto.cardAlt + '" src="' + asset(proyecto.cardImage) + '" />'
         : '';
+      const category = proyecto.category
+        ? '<span class="card-category">' + proyecto.category + '</span>'
+        : '';
+      const body =
+        '<div class="card-body">' +
+          '<div class="card-text">' +
+            category +
+            '<span class="card-title">' + proyecto.title + '</span>' +
+          '</div>' +
+        '</div>';
 
       if (proyecto.placeholder) {
         return (
           '<div class="card ' + proyecto.cardClass + '" aria-label="' + proyecto.title + '">' +
             '<div class="thumb">' + thumb + '</div>' +
-            '<div class="card-body">' + proyecto.title + '</div>' +
+            body +
           '</div>'
         );
       }
@@ -38,7 +48,7 @@
       return (
         '<a class="card ' + proyecto.cardClass + '" href="' + proyectoHref(proyecto.slug) + '">' +
           '<div class="thumb">' + thumb + '</div>' +
-          '<div class="card-body">' + proyecto.title + '</div>' +
+          body +
         '</a>'
       );
     }).join('');
@@ -241,7 +251,18 @@
       );
     }).join('');
 
+    var meta = '';
+    if (proyecto.role || proyecto.tools) {
+      meta =
+        '<div class="project-meta">' +
+          (proyecto.category ? '<p><span>Categoría</span> ' + proyecto.category + '</p>' : '') +
+          (proyecto.role ? '<p><span>Rol</span> ' + proyecto.role + '</p>' : '') +
+          (proyecto.tools ? '<p><span>Herramientas</span> ' + proyecto.tools + '</p>' : '') +
+        '</div>';
+    }
+
     container.innerHTML =
+      meta +
       '<h2>' + proyecto.processTitle + '</h2>' +
       '<div class="golden-vertical">' + items + '</div>';
   }
