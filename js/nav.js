@@ -36,15 +36,37 @@
     return window.matchMedia('(hover: hover) and (pointer: fine)').matches;
   }
 
+  function flipStep(step) {
+    var open = step.classList.contains('is-flipped');
+    steps.forEach(function (other) {
+      other.classList.remove('is-flipped');
+    });
+    if (!open) step.classList.add('is-flipped');
+  }
+
   steps.forEach(function (step) {
+    var startX = 0;
+    var startY = 0;
+
     step.addEventListener('click', function () {
       if (canHover()) return;
-      var open = step.classList.contains('is-flipped');
-      steps.forEach(function (other) {
-        other.classList.remove('is-flipped');
-      });
-      if (!open) step.classList.add('is-flipped');
+      flipStep(step);
     });
+
+    step.addEventListener('touchstart', function (event) {
+      if (canHover() || !event.changedTouches.length) return;
+      startX = event.changedTouches[0].clientX;
+      startY = event.changedTouches[0].clientY;
+    }, { passive: true });
+
+    step.addEventListener('touchend', function (event) {
+      if (canHover() || !event.changedTouches.length) return;
+      var dx = event.changedTouches[0].clientX - startX;
+      var dy = event.changedTouches[0].clientY - startY;
+      if (Math.abs(dx) < 40 || Math.abs(dx) < Math.abs(dy)) return;
+      event.preventDefault();
+      flipStep(step);
+    }, { passive: false });
 
     step.addEventListener('keydown', function (event) {
       if (event.key !== 'Enter' && event.key !== ' ') return;
