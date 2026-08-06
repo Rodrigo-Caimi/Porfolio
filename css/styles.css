@@ -1788,8 +1788,12 @@ body[data-proyecto-id="6"] .thumb-item img {
 /* Campaña Reel ORT + Don Pascual: más ancho (sin subir la altura) */
 body[data-proyecto-id="5"] .work-detail-hero,
 body[data-proyecto-id="5"] .golden-section,
+body[data-proyecto-id="5"] .project-meta-section,
+body[data-proyecto-id="5"] .project-actions-section,
 body[data-proyecto-id="7"] .work-detail-hero,
-body[data-proyecto-id="7"] .golden-section {
+body[data-proyecto-id="7"] .golden-section,
+body[data-proyecto-id="7"] .project-meta-section,
+body[data-proyecto-id="7"] .project-actions-section {
   max-width: min(1600px, 96vw);
   width: 100%;
   padding-left: clamp(16px, 3vw, 40px);
