@@ -81,11 +81,14 @@ header {
 }
 
 .logo-mark {
-  height: 32px;
-  width: auto;
+  height: 36px;
+  width: 36px;
   display: block;
   border-radius: 50%;
+  object-fit: cover;
+  overflow: hidden;
   flex-shrink: 0;
+  box-shadow: 0 0 0 1px rgba(28, 28, 28, 0.08);
 }
 
 .site-nav {
