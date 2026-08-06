@@ -2057,16 +2057,20 @@ footer {
 }
 
 .about-intro {
-  max-width: 700px;
+  max-width: 720px;
   margin: 0 auto 48px;
   text-align: center;
 }
 
 .about-intro p {
-  font-size: 24px;
-  line-height: 1.8;
+  font-size: clamp(18px, 2.2vw, 22px);
+  line-height: 1.7;
   color: var(--fg);
-  margin: 0;
+  margin: 0 0 16px;
+}
+
+.about-intro p:last-child {
+  margin-bottom: 0;
 }
 
 .availability-card {

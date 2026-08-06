@@ -1,4 +1,4 @@
-﻿const PROYECTOS = [
+const PROYECTOS = [
   {
     id: 1,
     slug: 'proyecto-1.html',
@@ -16,7 +16,7 @@
       { src: 'IMAGENES/bolsa horizonte.png', alt: 'Bolsa Horizonte' },
       { src: 'IMAGENES/pin de logo.png', alt: 'Pin de logo Horizonte' }
     ],
-    processTitle: 'Proceso del proyecto',
+    processTitle: 'Cómo se pensó este proyecto',
     process: [
       {
         title: 'Cómo se pensó este proyecto',
@@ -57,7 +57,7 @@
       { src: 'IMAGENES/4-PosteoIGMayoa.png', alt: 'Posteo Instagram Mayo Amarillo 4' },
       { src: 'IMAGENES/1-PosteoIgMayoA.webp', alt: 'Posteo Instagram Mayo Amarillo EN VIVO' }
     ],
-    processTitle: 'Proceso del proyecto',
+    processTitle: 'Cómo se pensó este proyecto',
     process: [
       {
         title: 'Cómo se pensó esta campaña',
@@ -148,7 +148,7 @@
       { src: 'IMAGENES/lo-que-no-vemos4.JPG', alt: 'Lo que no vemos 4' },
       { src: 'IMAGENES/lo-que-no-vemos.JPG', alt: 'Lo que no vemos' }
     ],
-    processTitle: 'Proceso del proyecto',
+    processTitle: 'Cómo se pensó este proyecto',
     process: [
       {
         title: 'Objetivo',
@@ -196,7 +196,7 @@
       { src: 'IMAGENES/Frame2 Final.png', alt: 'Frame 2' },
       { src: 'IMAGENES/Frame3 Final.png', alt: 'Frame 3' }
     ],
-    processTitle: 'Proceso del proyecto',
+    processTitle: 'Cómo se pensó este proyecto',
     process: [
       {
         title: 'Concepto y personaje',
