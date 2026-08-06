@@ -17,9 +17,11 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="preload" as="image" href="./IMAGENES/hero-rodrigo-20260806-mobile.jpg" media="(max-width: 920px)" fetchpriority="high">
   <link rel="preload" as="image" href="./IMAGENES/hero-rodrigo-20260806.jpg" media="(min-width: 921px)" fetchpriority="high">
+  <link rel="preload" as="image" href="./IMAGENES/cara-dibujo-mobile.jpg?v=20260806g" media="(max-width: 920px)">
+  <link rel="preload" as="image" href="./IMAGENES/cara-dibujo.jpg?v=20260806g" media="(min-width: 921px)">
   <link rel="preload" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;700&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
   <noscript><link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;700&display=swap" rel="stylesheet"></noscript>
-  <link rel="stylesheet" href="./css/styles.css?v=20260806b">
+  <link rel="stylesheet" href="./css/styles.css?v=20260806g">
   <style>
     html,body{margin:0;background:#FFFAF0;color:#1C1C1C;font-family:'DM Sans',system-ui,sans-serif}
     .hero-image{background:#EAE4D6}
@@ -79,17 +81,34 @@
           <a class="btn btn-secondary" href="./DOCUMENTOS/CV%20RODRIGO.pdf" download="CV-RODRIGO.pdf">Descarga mi CV</a>
         </div>
       </div>
-      <div class="hero-image">
+      <div class="hero-image hero-morph" data-hero-morph tabindex="0" role="img" aria-label="Foto de Rodrigo Caimi. Arrastrá o tocá para ver la versión ilustrada.">
         <img
-          src="./IMAGENES/hero-rodrigo-20260806-mobile.jpg"
-          srcset="./IMAGENES/hero-rodrigo-20260806-mobile.jpg 480w, ./IMAGENES/hero-rodrigo-20260806.jpg 720w"
+          class="hero-morph-draw"
+          src="./IMAGENES/cara-dibujo-mobile.jpg?v=20260806g"
+          srcset="./IMAGENES/cara-dibujo-mobile.jpg?v=20260806g 480w, ./IMAGENES/cara-dibujo.jpg?v=20260806g 720w"
           sizes="(max-width: 920px) 68vw, min(560px, 40vw)"
-          alt="Rodrigo Caimi"
+          alt="Rodrigo Caimi ilustrado"
           width="480"
           height="640"
-          fetchpriority="high"
           decoding="async"
         />
+        <div class="hero-morph-photo" data-hero-photo>
+          <img
+            src="./IMAGENES/hero-rodrigo-20260806-mobile.jpg"
+            srcset="./IMAGENES/hero-rodrigo-20260806-mobile.jpg 480w, ./IMAGENES/hero-rodrigo-20260806.jpg 720w"
+            sizes="(max-width: 920px) 68vw, min(560px, 40vw)"
+            alt="Rodrigo Caimi"
+            width="480"
+            height="640"
+            fetchpriority="high"
+            decoding="async"
+          />
+        </div>
+        <div class="hero-morph-handle" data-hero-handle aria-hidden="true">
+          <span class="hero-morph-handle-line"></span>
+          <span class="hero-morph-handle-knob"></span>
+        </div>
+        <span class="hero-morph-hint">Arrastrá o tocá</span>
       </div>
     </section>
 
@@ -206,10 +225,10 @@
       <div class="spacer"></div>
     </div>
   </footer>
-  <script src="./js/nav.js?v=20260806b" defer></script>
-  <script src="./js/proyectos.js?v=20260806b" defer></script>
-  <script src="./js/trabajos.js?v=20260806b" defer></script>
-  <script src="./js/contacto.js?v=20260806b" defer></script>
+  <script src="./js/nav.js?v=20260806g" defer></script>
+  <script src="./js/proyectos.js?v=20260806g" defer></script>
+  <script src="./js/trabajos.js?v=20260806g" defer></script>
+  <script src="./js/contacto.js?v=20260806g" defer></script>
   <script>
     window.addEventListener('load', function () {
       setTimeout(function () {
