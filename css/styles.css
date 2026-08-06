@@ -624,29 +624,84 @@ a.card:active {
   color: var(--fg);
 }
 
+.project-meta-section {
+  width: 100%;
+  max-width: var(--container);
+  margin: 0 auto;
+  padding: 8px var(--gutter) 8px;
+  box-sizing: border-box;
+}
+
 .project-meta {
   display: flex;
-  flex-wrap: wrap;
-  gap: 8px 20px;
-  max-width: 720px;
-  margin: 0 auto 20px;
-  padding: 14px 18px;
+  flex-direction: column;
+  gap: 10px;
+  max-width: 560px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 22px 24px;
+  text-align: left;
   background: rgba(107, 140, 114, 0.08);
-  border: 1px solid rgba(107, 140, 114, 0.18);
-  border-radius: 12px;
+  border: 1px solid rgba(107, 140, 114, 0.2);
+  border-radius: 16px;
+  box-sizing: border-box;
 }
 
 .project-meta p {
   margin: 0;
-  font-size: 15px;
-  line-height: 1.45;
+  font-size: 16px;
+  line-height: 1.5;
   color: var(--fg);
 }
 
 .project-meta span {
+  display: block;
+  font-size: 12px;
   font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
   color: var(--brand);
-  margin-right: 4px;
+  margin-bottom: 2px;
+}
+
+.project-actions-section {
+  width: 100%;
+  max-width: var(--container);
+  margin: 0 auto;
+  padding: 8px var(--gutter) 28px;
+  box-sizing: border-box;
+  text-align: left;
+}
+
+.project-actions-list {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  max-width: 720px;
+}
+
+.project-action-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.project-action-prompt {
+  margin: 0;
+  color: var(--fg);
+  font-size: 17px;
+  font-weight: 500;
+}
+
+.project-action-arrow {
+  color: var(--fg);
+  flex-shrink: 0;
+}
+
+.project-action-btn {
+  padding: 10px 20px;
+  font-size: 15px;
 }
 
 .card-body::after {

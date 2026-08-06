@@ -7,6 +7,8 @@
     cardClass: 'card-pair',
     cardImage: 'IMAGENES/horizonte-imagen-principal.png',
     cardAlt: 'Horizonte - Creación de marca',
+    role: 'Identidad de marca: concepto, sistema visual y aplicaciones',
+    tools: 'Illustrator, Photoshop',
     galleryContain: false,
     gallery: [
       { src: 'IMAGENES/HORIZONTE EN CALLE.png', alt: 'Horizonte en calle' },
@@ -46,6 +48,8 @@
     cardClass: 'card-pair',
     cardImage: 'IMAGENES/mayo-amarillo-card.jpg',
     cardAlt: 'Mayo Amarillo - Campaña',
+    role: 'Campaña de concientización: concepto, piezas gráficas y piezas digitales',
+    tools: 'Photoshop, Illustrator',
     galleryContain: true,
     gallery: [
       { src: 'IMAGENES/Afiche-de-campana.webp', alt: 'Afiche de campaña Mayo Amarillo' },
@@ -135,6 +139,8 @@
     cardClass: 'card-pair',
     cardImage: 'IMAGENES/fotografia cerveza.jpg',
     cardAlt: 'Proyecto Fotográfico',
+    role: 'Fotografía de producto y exploración técnica',
+    tools: 'Cámara, Lightroom, Photoshop',
     galleryContain: true,
     gallery: [
       { src: 'IMAGENES/fotografia cerveza.jpg', alt: 'Fotografía cerveza' },
@@ -174,6 +180,8 @@
     cardClass: 'card-pair',
     cardImage: 'IMAGENES/ort-reel-card.jpg',
     cardAlt: 'Campaña Reel ORT',
+    role: 'Reel promocional: concepto, generación audiovisual y edición',
+    tools: 'ChatGPT, Runway, Premiere',
     galleryContain: true,
     gallery: [
       {

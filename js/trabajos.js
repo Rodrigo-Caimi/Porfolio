@@ -223,20 +223,42 @@
           ? ' target="_blank" rel="noopener" download="' + (action.download || '') + '"'
           : ' target="_blank" rel="noopener"');
 
+      var prompt = action.external
+        ? (action.label && /reel|video|drive/i.test(action.label)
+          ? 'Si querés visualizar el proyecto'
+          : 'Si querés visitar el proyecto')
+        : 'Si querés más información del proyecto';
+
       return (
-        '<div style="display:flex;align-items:center;gap:16px;flex-wrap:wrap;">' +
-          '<span style="color:#1C1C1C;font-size:18px;font-weight:500;">' +
-            (action.external ? (action.label && action.label.indexOf('reel') !== -1 ? 'Mirá el reel completo' : 'Visualiza el prototipo interactivo') : 'Si quieres más información del proyecto') +
-          '</span>' +
-          '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color:#1C1C1C;">' +
+        '<div class="project-action-row">' +
+          '<p class="project-action-prompt">' + prompt + '</p>' +
+          '<svg class="project-action-arrow" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">' +
             '<path d="M5 12h14M12 5l7 7-7 7"/>' +
           '</svg>' +
-          '<a href="' + href + '"' + attrs + ' class="btn btn-primary" style="padding:10px 20px;font-size:15px;">' + action.label + '</a>' +
+          '<a href="' + href + '"' + attrs + ' class="btn btn-primary project-action-btn">' + action.label + '</a>' +
         '</div>'
       );
     }).join('');
 
-    container.innerHTML = '<div style="display:flex;flex-direction:column;gap:12px;">' + rows + '</div>';
+    container.innerHTML = '<div class="project-actions-list">' + rows + '</div>';
+  }
+
+  function renderMeta(container, proyecto) {
+    if (!container) return;
+
+    if (!proyecto.category && !proyecto.role && !proyecto.tools) {
+      container.innerHTML = '';
+      container.hidden = true;
+      return;
+    }
+
+    container.hidden = false;
+    container.innerHTML =
+      '<div class="project-meta">' +
+        (proyecto.category ? '<p><span>Categoría</span> ' + proyecto.category + '</p>' : '') +
+        (proyecto.role ? '<p><span>Rol</span> ' + proyecto.role + '</p>' : '') +
+        (proyecto.tools ? '<p><span>Herramientas</span> ' + proyecto.tools + '</p>' : '') +
+      '</div>';
   }
 
   function renderProcess(container, proyecto) {
@@ -251,18 +273,7 @@
       );
     }).join('');
 
-    var meta = '';
-    if (proyecto.role || proyecto.tools) {
-      meta =
-        '<div class="project-meta">' +
-          (proyecto.category ? '<p><span>Categoría</span> ' + proyecto.category + '</p>' : '') +
-          (proyecto.role ? '<p><span>Rol</span> ' + proyecto.role + '</p>' : '') +
-          (proyecto.tools ? '<p><span>Herramientas</span> ' + proyecto.tools + '</p>' : '') +
-        '</div>';
-    }
-
     container.innerHTML =
-      meta +
       '<h2>' + proyecto.processTitle + '</h2>' +
       '<div class="golden-vertical">' + items + '</div>';
   }
@@ -301,8 +312,9 @@
     document.title = proyecto.title + ' — Rodrigo Caimi';
 
     renderGallery(document.querySelector('[data-proyecto-gallery]'), proyecto);
-    renderActions(document.querySelector('[data-proyecto-actions]'), proyecto);
+    renderMeta(document.querySelector('[data-proyecto-meta]'), proyecto);
     renderProcess(document.querySelector('[data-proyecto-process]'), proyecto);
+    renderActions(document.querySelector('[data-proyecto-actions]'), proyecto);
     renderOtherProjects(document.querySelector('[data-proyecto-related]'), proyectoId);
   }
 
