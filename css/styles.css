@@ -630,6 +630,7 @@ a.card:active {
   margin: 0 auto;
   padding: 8px var(--gutter) 8px;
   box-sizing: border-box;
+  align-self: stretch;
 }
 
 .project-meta {
@@ -670,21 +671,26 @@ a.card:active {
   margin: 0 auto;
   padding: 8px var(--gutter) 28px;
   box-sizing: border-box;
+  align-self: stretch;
   text-align: left;
 }
 
 .project-actions-list {
   display: flex;
   flex-direction: column;
+  align-items: flex-start;
   gap: 14px;
-  max-width: 720px;
+  width: 100%;
+  margin: 0;
 }
 
 .project-action-row {
   display: flex;
   align-items: center;
+  justify-content: flex-start;
   gap: 12px;
   flex-wrap: wrap;
+  width: 100%;
 }
 
 .project-action-prompt {
@@ -1885,6 +1891,8 @@ body[data-proyecto-id="7"] .golden-vertical .golden-item p {
   width: 100%;
   margin: 0 auto;
   padding: 0 var(--gutter);
+  align-self: stretch;
+  box-sizing: border-box;
 }
 
 .golden-section h2 {
