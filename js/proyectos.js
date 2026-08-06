@@ -11,10 +11,10 @@ const PROYECTOS = [
     tools: 'Illustrator, Photoshop',
     galleryContain: false,
     gallery: [
-      { src: 'IMAGENES/HORIZONTE EN CALLE.png', alt: 'Horizonte en calle' },
-      { src: 'IMAGENES/tarjeta de presentacion.png', alt: 'Tarjeta de presentación Horizonte' },
-      { src: 'IMAGENES/bolsa horizonte.png', alt: 'Bolsa Horizonte' },
-      { src: 'IMAGENES/pin de logo.png', alt: 'Pin de logo Horizonte' }
+      { src: 'IMAGENES/horizonte-calle.jpg', thumb: 'IMAGENES/horizonte-calle-thumb.jpg', alt: 'Horizonte en calle' },
+      { src: 'IMAGENES/horizonte-tarjeta.jpg', thumb: 'IMAGENES/horizonte-tarjeta-thumb.jpg', alt: 'Tarjeta de presentación Horizonte' },
+      { src: 'IMAGENES/horizonte-bolsa.jpg', thumb: 'IMAGENES/horizonte-bolsa-thumb.jpg', alt: 'Bolsa Horizonte' },
+      { src: 'IMAGENES/horizonte-pin.jpg', thumb: 'IMAGENES/horizonte-pin-thumb.jpg', alt: 'Pin de logo Horizonte' }
     ],
     processTitle: 'Cómo se pensó este proyecto',
     process: [
@@ -54,7 +54,7 @@ const PROYECTOS = [
     gallery: [
       { src: 'IMAGENES/Afiche-de-campana.webp', alt: 'Afiche de campaña Mayo Amarillo' },
       { src: 'IMAGENES/5-PosteoIgMayo.webp', alt: 'Posteo Instagram Mayo Amarillo 5' },
-      { src: 'IMAGENES/4-PosteoIGMayoa.png', alt: 'Posteo Instagram Mayo Amarillo 4' },
+      { src: 'IMAGENES/4-PosteoIGMayoa.jpg', thumb: 'IMAGENES/4-PosteoIGMayoa-thumb.jpg', alt: 'Posteo Instagram Mayo Amarillo 4' },
       { src: 'IMAGENES/1-PosteoIgMayoA.webp', alt: 'Posteo Instagram Mayo Amarillo EN VIVO' }
     ],
     processTitle: 'Cómo se pensó este proyecto',
@@ -87,16 +87,16 @@ const PROYECTOS = [
     title: 'Totem de Café',
     category: 'UX/UI',
     cardClass: 'card-third',
-    cardImage: 'IMAGENES/TOTEM-CAFE.png',
+    cardImage: 'IMAGENES/totem-cafe.jpg',
     cardAlt: 'Totem de Café - Interfaz digital',
     role: 'Diseño UX/UI end-to-end: flujos, pantallas y prototipo interactivo',
     tools: 'Figma',
     galleryContain: true,
     gallery: [
-      { src: 'IMAGENES/TOTEM-CAFE.png', alt: 'Totem de Café - Menú principal' },
-      { src: 'IMAGENES/RECARGA-CAFE.png', alt: 'Recarga completada Totem de Café' },
-      { src: 'IMAGENES/METODO-DE-PAGO CAFE.png', alt: 'Pago Totem de Café' },
-      { src: 'IMAGENES/COMPRACAFE.png', alt: 'Gracias por su compra Totem de Café' }
+      { src: 'IMAGENES/totem-cafe.jpg', thumb: 'IMAGENES/totem-cafe-thumb.jpg', alt: 'Totem de Café - Menú principal' },
+      { src: 'IMAGENES/totem-recarga.jpg', thumb: 'IMAGENES/totem-recarga-thumb.jpg', alt: 'Recarga completada Totem de Café' },
+      { src: 'IMAGENES/totem-pago.jpg', thumb: 'IMAGENES/totem-pago-thumb.jpg', alt: 'Pago Totem de Café' },
+      { src: 'IMAGENES/totem-compra.jpg', thumb: 'IMAGENES/totem-compra-thumb.jpg', alt: 'Gracias por su compra Totem de Café' }
     ],
     processTitle: 'Cómo se pensó este proyecto',
     process: [
@@ -143,10 +143,10 @@ const PROYECTOS = [
     tools: 'Cámara, Lightroom, Photoshop',
     galleryContain: true,
     gallery: [
-      { src: 'IMAGENES/fotografia cerveza.jpg', alt: 'Fotografía cerveza' },
-      { src: 'IMAGENES/joyeriaCreacion.jpg', alt: 'Joyeria Creación' },
-      { src: 'IMAGENES/lo-que-no-vemos4.JPG', alt: 'Lo que no vemos 4' },
-      { src: 'IMAGENES/lo-que-no-vemos.JPG', alt: 'Lo que no vemos' }
+      { src: 'IMAGENES/fotografia cerveza.jpg', thumb: 'IMAGENES/foto-cerveza-thumb.jpg', alt: 'Fotografía cerveza' },
+      { src: 'IMAGENES/joyeriaCreacion.jpg', thumb: 'IMAGENES/foto-joyeria-thumb.jpg', alt: 'Joyeria Creación' },
+      { src: 'IMAGENES/foto-lo-que-no-vemos4.jpg', thumb: 'IMAGENES/lo-que-no-vemos4-thumb.jpg', alt: 'Lo que no vemos 4' },
+      { src: 'IMAGENES/foto-lo-que-no-vemos.jpg', thumb: 'IMAGENES/lo-que-no-vemos-thumb.jpg', alt: 'Lo que no vemos' }
     ],
     processTitle: 'Cómo se pensó este proyecto',
     process: [
@@ -186,15 +186,14 @@ const PROYECTOS = [
     gallery: [
       {
         type: 'drive',
-        // Pegá acá el link de Drive (cualquiera de estos formatos funciona):
-        // https://drive.google.com/file/d/ID_DEL_ARCHIVO/view
         src: 'https://drive.google.com/file/d/1jJUfmDSgZgIW8X82zi6upIzRgT_ATak-/view?usp=sharing',
-        poster: 'IMAGENES/Frame1 Final (2).png',
+        poster: 'IMAGENES/ort-frame1.jpg',
+        thumb: 'IMAGENES/ort-frame1-thumb.jpg',
         alt: 'Reel final Campaña ORT'
       },
-      { src: 'IMAGENES/Frame1 Final (2).png', alt: 'Frame 1 - Entrada ORT' },
-      { src: 'IMAGENES/Frame2 Final.png', alt: 'Frame 2' },
-      { src: 'IMAGENES/Frame3 Final.png', alt: 'Frame 3' }
+      { src: 'IMAGENES/ort-frame1.jpg', thumb: 'IMAGENES/ort-frame1-thumb.jpg', alt: 'Frame 1 - Entrada ORT' },
+      { src: 'IMAGENES/ort-frame2.jpg', thumb: 'IMAGENES/ort-frame2-thumb.jpg', alt: 'Frame 2' },
+      { src: 'IMAGENES/ort-frame3.jpg', thumb: 'IMAGENES/ort-frame3-thumb.jpg', alt: 'Frame 3' }
     ],
     processTitle: 'Cómo se pensó este proyecto',
     process: [
@@ -237,10 +236,10 @@ const PROYECTOS = [
     tools: 'Figma',
     galleryContain: true,
     gallery: [
-      { src: 'IMAGENES/noir-interior.png', alt: 'Interior Noir Barbería & Estilo' },
-      { src: 'IMAGENES/noir-herramientas.png', alt: 'Herramientas y productos Noir Estudio' },
-      { src: 'IMAGENES/noir-productos.png', alt: 'Línea de coloración Noir Estudio' },
-      { src: 'IMAGENES/noir-experiencia.png', alt: 'Experiencia Noir Estudio' }
+      { src: 'IMAGENES/noir-interior.jpg', thumb: 'IMAGENES/noir-interior-thumb.jpg', alt: 'Interior Noir Barbería & Estilo' },
+      { src: 'IMAGENES/noir-herramientas.jpg', thumb: 'IMAGENES/noir-herramientas-thumb.jpg', alt: 'Herramientas y productos Noir Estudio' },
+      { src: 'IMAGENES/noir-productos.jpg', thumb: 'IMAGENES/noir-productos-thumb.jpg', alt: 'Línea de coloración Noir Estudio' },
+      { src: 'IMAGENES/noir-experiencia.jpg', thumb: 'IMAGENES/noir-experiencia-thumb.jpg', alt: 'Experiencia Noir Estudio' }
     ],
     processTitle: 'Cómo se pensó este proyecto',
     process: [
@@ -290,14 +289,15 @@ const PROYECTOS = [
       {
         type: 'drive',
         src: 'https://drive.google.com/file/d/1WydlpYJ0gdyQRTn3j-sHAU-dG0CKaq5O/view?usp=sharing',
-        poster: 'IMAGENES/don-pascual-botella-fuego.png',
+        poster: 'IMAGENES/don-pascual-botella-fuego.jpg',
+        thumb: 'IMAGENES/don-pascual-botella-fuego-thumb.jpg',
         alt: 'Video campaña Don Pascual Edición Limitada Invierno 2026'
       },
-      { src: 'IMAGENES/don-pascual-afiche.png', alt: 'Afiche Don Pascual Edición Limitada' },
-      { src: 'IMAGENES/don-pascual-campana.png', alt: 'Mockup terminado campaña Don Pascual' },
-      { src: 'IMAGENES/don-pascual-botella.png', alt: 'Botella Don Pascual Chardonnay 2026' },
-      { src: 'IMAGENES/don-pascual-etiqueta.jpg', alt: 'Etiqueta con ilustración Don Pascual' },
-      { src: 'IMAGENES/don-pascual-omnibus.png', alt: 'Mockup publicidad en ómnibus Don Pascual' }
+      { src: 'IMAGENES/don-pascual-afiche.jpg', thumb: 'IMAGENES/don-pascual-afiche-thumb.jpg', alt: 'Afiche Don Pascual Edición Limitada' },
+      { src: 'IMAGENES/don-pascual-campana.jpg', thumb: 'IMAGENES/don-pascual-campana-thumb.jpg', alt: 'Mockup terminado campaña Don Pascual' },
+      { src: 'IMAGENES/don-pascual-botella.jpg', thumb: 'IMAGENES/don-pascual-botella-thumb.jpg', alt: 'Botella Don Pascual Chardonnay 2026' },
+      { src: 'IMAGENES/don-pascual-etiqueta.jpg', thumb: 'IMAGENES/don-pascual-etiqueta-thumb.jpg', alt: 'Etiqueta con ilustración Don Pascual' },
+      { src: 'IMAGENES/don-pascual-omnibus.jpg', thumb: 'IMAGENES/don-pascual-omnibus-thumb.jpg', alt: 'Mockup publicidad en ómnibus Don Pascual' }
     ],
     processTitle: 'Cómo se pensó este proyecto',
     process: [

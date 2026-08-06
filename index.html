@@ -3,9 +3,12 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Rodrigo Caimi — Portafolio</title>
+  <title>Rodrigo Caimi | Diseñador gráfico web y multimedia</title>
   <meta name="description" content="Portafolio de Rodrigo Caimi, diseñador gráfico web y multimedia. Identidades, experiencias digitales y piezas de comunicación.">
-  <meta property="og:title" content="Rodrigo Caimi — Portafolio">
+  <link rel="canonical" href="https://rodrigo-caimi.github.io/Porfolio/">
+  <link rel="icon" href="./IMAGENES/ICONO-PARA-PAGINA.webp" type="image/webp">
+  <link rel="apple-touch-icon" href="./IMAGENES/ICONO-PARA-PAGINA.webp">
+  <meta property="og:title" content="Rodrigo Caimi | Diseñador gráfico web y multimedia">
   <meta property="og:description" content="Diseñador gráfico web y multimedia. Identidades, experiencias digitales y piezas de comunicación, combinando diseño, audiovisual e IA.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://rodrigo-caimi.github.io/Porfolio/">
@@ -16,7 +19,7 @@
   <link rel="preload" as="image" href="./IMAGENES/Principal-hero.jpg" media="(min-width: 921px)" fetchpriority="high">
   <link rel="preload" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;700&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
   <noscript><link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;700&display=swap" rel="stylesheet"></noscript>
-  <link rel="stylesheet" href="./css/styles.css?v=20260805m">
+  <link rel="stylesheet" href="./css/styles.css?v=20260805r">
   <style>
     html,body{margin:0;background:#FFFAF0;color:#1C1C1C;font-family:'DM Sans',system-ui,sans-serif}
     .hero-image{background:#EAE4D6}
@@ -66,9 +69,11 @@
   <main>
     <section id="sobre-mi" class="hero">
       <div class="hero-copy">
-        <h1>Rodrigo</h1>
-        <p class="sub">Diseñador gráfico web y multimedia</p>
-        <p class="desc">Desarrollo identidades, experiencias digitales y piezas de comunicación, combinando diseño, audiovisual e inteligencia artificial cuando suman al proyecto.</p>
+        <h1>
+          <span class="hero-name">Rodrigo Caimi</span>
+          <span class="hero-role">Diseñador gráfico web y multimedia</span>
+        </h1>
+        <p class="desc">Desarrollo identidades de marca, experiencias digitales y piezas de comunicación para proyectos creativos. Combino diseño gráfico, audiovisual e inteligencia artificial cuando suman al resultado, con foco en claridad, coherencia visual y una ejecución cuidadosa en cada entrega.</p>
         <div class="cta">
           <a class="btn btn-primary" href="#trabajos">Ver mis trabajos</a>
           <a class="btn btn-secondary" href="./DOCUMENTOS/CV%20RODRIGO.pdf" download="CV-RODRIGO.pdf">Descarga mi CV</a>
@@ -90,7 +95,8 @@
 
     <section id="trabajos">
       <div class="work-section">
-        <h2>Trabajos</h2>
+        <h2>Trabajos seleccionados</h2>
+        <p class="section-lead">Una selección de branding, campañas, UX/UI, fotografía y piezas audiovisuales del portafolio de Rodrigo Caimi.</p>
         <div class="work-container" data-render="grid"></div>
       </div>
     </section>
@@ -98,6 +104,7 @@
     <section id="proceso">
       <div class="process-section">
         <h2>Cómo trabajo</h2>
+        <p class="section-lead">Un proceso claro para pasar del brief a la entrega: investigar, explorar conceptos, producir con criterio y revisar hasta que cada pieza quede lista.</p>
         <div class="steps">
           <article class="step" tabindex="0" aria-label="Investigación y objetivos">
             <div class="step-inner">
@@ -112,7 +119,7 @@
               </div>
               <div class="step-face step-back">
                 <span class="step-num">01</span>
-                <h3>Investigación y objetivos</h3>
+                <p class="step-back-title">Investigación y objetivos</p>
                 <p>Analizo el contexto, la audiencia y las necesidades del proyecto para definir una dirección clara antes de diseñar.</p>
               </div>
             </div>
@@ -132,7 +139,7 @@
               </div>
               <div class="step-face step-back">
                 <span class="step-num">02</span>
-                <h3>Concepto y exploración</h3>
+                <p class="step-back-title">Concepto y exploración</p>
                 <p>Desarrollo referencias, bocetos, wireframes o propuestas visuales según el tipo de proyecto: marca, web, campaña o audiovisual.</p>
               </div>
             </div>
@@ -150,7 +157,7 @@
               </div>
               <div class="step-face step-back">
                 <span class="step-num">03</span>
-                <h3>Diseño y producción</h3>
+                <p class="step-back-title">Diseño y producción</p>
                 <p>Construyo las piezas, interfaces o contenidos cuidando identidad, funcionalidad y ejecución técnica hasta la entrega.</p>
               </div>
             </div>
@@ -167,7 +174,7 @@
               </div>
               <div class="step-face step-back">
                 <span class="step-num">04</span>
-                <h3>Revisión y mejora</h3>
+                <p class="step-back-title">Revisión y mejora</p>
                 <p>Evalúo el resultado, incorporo devoluciones y ajusto detalles antes de cerrar la versión final.</p>
               </div>
             </div>
@@ -200,10 +207,10 @@
       <div class="spacer"></div>
     </div>
   </footer>
-  <script src="./js/nav.js?v=20260805m" defer></script>
-  <script src="./js/proyectos.js?v=20260805m" defer></script>
-  <script src="./js/trabajos.js?v=20260805m" defer></script>
-  <script src="./js/contacto.js?v=20260805m" defer></script>
+  <script src="./js/nav.js?v=20260805r" defer></script>
+  <script src="./js/proyectos.js?v=20260805r" defer></script>
+  <script src="./js/trabajos.js?v=20260805r" defer></script>
+  <script src="./js/contacto.js?v=20260805r" defer></script>
   <script>
     window.addEventListener('load', function () {
       setTimeout(function () {

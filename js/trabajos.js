@@ -23,7 +23,7 @@
 
     container.innerHTML = ordered.map(function (proyecto) {
       const thumb = proyecto.cardImage
-        ? '<img loading="lazy" alt="' + proyecto.cardAlt + '" src="' + asset(proyecto.cardImage) + '" />'
+        ? '<img loading="lazy" decoding="async" alt="' + proyecto.cardAlt + '" src="' + asset(proyecto.cardImage) + '" />'
         : '';
       const category = proyecto.category
         ? '<span class="card-category">' + proyecto.category + '</span>'
@@ -89,26 +89,29 @@
       const poster = asset(first.poster || '');
       if (preview) {
         mainMedia =
-          '<iframe id="main-media" class="drive-embed" src="' + preview + '" title="' + first.alt + '" allow="autoplay" allowfullscreen></iframe>';
+          '<button type="button" class="drive-poster" data-drive-preview="' + preview + '" data-drive-title="' + (first.alt || 'Video') + '" aria-label="Reproducir ' + (first.alt || 'video') + '">' +
+            '<img id="main-media" class="' + mainClass + '" src="' + poster + '" alt="' + first.alt + '" decoding="async" fetchpriority="high" />' +
+          '</button>';
       } else if (viewUrl) {
         mainMedia =
           '<a class="drive-fallback" href="' + viewUrl + '" target="_blank" rel="noopener" aria-label="' + first.alt + '">' +
-            '<img id="main-media" class="' + mainClass + '" src="' + poster + '" alt="' + first.alt + '" />' +
+            '<img id="main-media" class="' + mainClass + '" src="' + poster + '" alt="' + first.alt + '" decoding="async" />' +
             '<span class="drive-fallback-label">Ver video en Drive</span>' +
           '</a>';
       } else {
         mainMedia =
           '<div class="drive-fallback">' +
-            '<img id="main-media" class="' + mainClass + '" src="' + poster + '" alt="' + first.alt + '" />' +
+            '<img id="main-media" class="' + mainClass + '" src="' + poster + '" alt="' + first.alt + '" decoding="async" />' +
           '</div>';
       }
     } else if (isVideoItem(first)) {
       mainMedia = '<video id="main-media" class="' + mainClass + '" controls playsinline poster="' + asset(first.poster || '') + '" src="' + asset(first.src) + '"></video>';
     } else {
-      mainMedia = '<img id="main-media" class="' + mainClass + '" loading="eager" src="' + asset(first.src) + '" alt="' + first.alt + '" />';
+      mainMedia = '<img id="main-media" class="' + mainClass + '" loading="eager" decoding="async" fetchpriority="high" src="' + asset(first.src) + '" alt="' + first.alt + '" />';
     }
 
     const thumbs = proyecto.gallery.map(function (item, index) {
+      const thumbSrc = asset(item.thumb || item.poster || item.src);
       const poster = asset(item.poster || item.src);
       let attrs;
 
@@ -122,7 +125,7 @@
 
       return (
         '<div class="thumb-item' + ((isVideoItem(item) || isDriveItem(item)) ? ' is-video' : '') + (index === 0 ? ' is-active' : '') + '"' + attrs + '>' +
-          '<img class="thumb-img" loading="lazy" src="' + poster + '" alt="' + item.alt + '" />' +
+          '<img class="thumb-img" loading="lazy" decoding="async" src="' + thumbSrc + '" alt="' + item.alt + '" />' +
         '</div>'
       );
     }).join('');
@@ -136,19 +139,29 @@
     initGallery(container.querySelector('[data-gallery]'), mainClass);
   }
 
+  function loadDriveEmbed(mainWrap, preview, title) {
+    if (!mainWrap || !preview) return;
+    mainWrap.innerHTML =
+      '<iframe id="main-media" class="drive-embed" src="' + preview + '" title="' + (title || 'Video') + '" allow="autoplay" allowfullscreen></iframe>';
+  }
+
   function showMainMedia(mainWrap, type, src, poster, alt, mainClass, viewUrl) {
     if (!mainWrap) return;
 
     if (type === 'drive') {
       if (src) {
+        // Poster + click: no cargar el iframe hasta que el usuario lo pida
         mainWrap.innerHTML =
-          '<iframe id="main-media" class="drive-embed" src="' + src + '" title="' + (alt || 'Video') + '" allow="autoplay" allowfullscreen></iframe>';
+          '<button type="button" class="drive-poster" data-drive-preview="' + src + '" data-drive-title="' + (alt || 'Video') + '" aria-label="Reproducir ' + (alt || 'video') + '">' +
+            '<img id="main-media" class="' + mainClass + '" src="' + (poster || '') + '" alt="' + (alt || '') + '" decoding="async" />' +
+          '</button>';
+        bindDrivePoster(mainWrap);
       } else if (viewUrl) {
         window.open(viewUrl, '_blank', 'noopener');
       } else {
         mainWrap.innerHTML =
           '<div class="drive-fallback">' +
-            '<img id="main-media" class="' + mainClass + '" src="' + (poster || '') + '" alt="' + (alt || '') + '" />' +
+            '<img id="main-media" class="' + mainClass + '" src="' + (poster || '') + '" alt="' + (alt || '') + '" decoding="async" />' +
           '</div>';
       }
       return;
@@ -163,6 +176,12 @@
     // Reutilizar la misma <img> para evitar saltos de scroll al cambiar fotos
     var existing = mainWrap.querySelector('#main-media');
     if (existing && existing.tagName === 'IMG') {
+      // Si venimos de un poster/button, volver a un img suelto
+      if (existing.closest('.drive-poster, .drive-fallback')) {
+        mainWrap.innerHTML =
+          '<img id="main-media" class="' + mainClass + '" src="' + src + '" alt="' + (alt || '') + '" decoding="async" />';
+        return;
+      }
       existing.className = mainClass || '';
       existing.alt = alt || '';
       if (existing.getAttribute('src') !== src) {
@@ -172,7 +191,17 @@
     }
 
     mainWrap.innerHTML =
-      '<img id="main-media" class="' + mainClass + '" src="' + src + '" alt="' + (alt || '') + '" />';
+      '<img id="main-media" class="' + mainClass + '" src="' + src + '" alt="' + (alt || '') + '" decoding="async" />';
+  }
+
+  function bindDrivePoster(mainWrap) {
+    if (!mainWrap) return;
+    const btn = mainWrap.querySelector('.drive-poster');
+    if (!btn || btn.dataset.bound === '1') return;
+    btn.dataset.bound = '1';
+    btn.addEventListener('click', function () {
+      loadDriveEmbed(mainWrap, btn.getAttribute('data-drive-preview'), btn.getAttribute('data-drive-title'));
+    });
   }
 
   function initGallery(gallery, mainClass) {
@@ -180,6 +209,8 @@
 
     const mainWrap = gallery.querySelector('.main-image');
     const thumbItems = gallery.querySelectorAll('.thumb-item');
+
+    bindDrivePoster(mainWrap);
 
     thumbItems.forEach(function (item) {
       item.addEventListener('click', function (event) {
