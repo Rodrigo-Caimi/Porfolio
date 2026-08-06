@@ -32,8 +32,8 @@
   var steps = document.querySelectorAll('.step');
   if (!steps.length) return;
 
-  function canHover() {
-    return window.matchMedia('(hover: hover) and (pointer: fine)').matches;
+  function useHoverFlip() {
+    return window.matchMedia('(hover: hover) and (pointer: fine) and (min-width: 1101px)').matches;
   }
 
   function flipStep(step) {
@@ -49,18 +49,18 @@
     var startY = 0;
 
     step.addEventListener('click', function () {
-      if (canHover()) return;
+      if (useHoverFlip()) return;
       flipStep(step);
     });
 
     step.addEventListener('touchstart', function (event) {
-      if (canHover() || !event.changedTouches.length) return;
+      if (useHoverFlip() || !event.changedTouches.length) return;
       startX = event.changedTouches[0].clientX;
       startY = event.changedTouches[0].clientY;
     }, { passive: true });
 
     step.addEventListener('touchend', function (event) {
-      if (canHover() || !event.changedTouches.length) return;
+      if (useHoverFlip() || !event.changedTouches.length) return;
       var dx = event.changedTouches[0].clientX - startX;
       var dy = event.changedTouches[0].clientY - startY;
       if (Math.abs(dx) < 40 || Math.abs(dx) < Math.abs(dy)) return;
