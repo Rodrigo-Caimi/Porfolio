@@ -397,10 +397,12 @@ section.hero {
 }
 
 .work-section {
+  width: 100%;
   max-width: var(--container);
   margin: 0 auto;
   padding: 0 var(--gutter);
   text-align: center;
+  box-sizing: border-box;
 }
 
 .work-container {
@@ -689,10 +691,12 @@ a.card:active {
 }
 
 .process-section {
+  width: 100%;
   max-width: 1400px;
   margin: 0 auto;
   padding: 0 var(--gutter);
   text-align: center;
+  box-sizing: border-box;
 }
 
 .steps {
