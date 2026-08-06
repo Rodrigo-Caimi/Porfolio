@@ -633,7 +633,7 @@ a.card:active {
   width: 100%;
   max-width: var(--container);
   margin: 0 auto;
-  padding: 28px var(--gutter) 12px;
+  padding: 24px var(--gutter) 8px;
   box-sizing: border-box;
   align-self: stretch;
   text-align: left;
@@ -641,10 +641,11 @@ a.card:active {
 
 .project-meta {
   display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  gap: 18px;
-  max-width: 720px;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 8px 28px;
+  max-width: none;
   width: 100%;
   margin: 0;
   padding: 0;
@@ -657,19 +658,19 @@ a.card:active {
 
 .project-meta p {
   margin: 0;
-  font-size: 17px;
-  line-height: 1.55;
+  font-size: 15px;
+  line-height: 1.45;
   color: var(--fg);
 }
 
 .project-meta span {
-  display: block;
+  display: inline;
   font-size: 12px;
   font-weight: 700;
   letter-spacing: 0.08em;
   text-transform: uppercase;
   color: var(--brand);
-  margin-bottom: 4px;
+  margin: 0 6px 0 0;
 }
 
 .project-actions-section {
