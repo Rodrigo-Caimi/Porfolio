@@ -1868,7 +1868,7 @@ body[data-proyecto-id="3"] .main-image {
 }
 
 body[data-proyecto-id="3"] .main-image {
-  aspect-ratio: 882 / 1124;
+  aspect-ratio: 972 / 1243;
   background: #dceef5;
 }
 
@@ -1879,9 +1879,10 @@ body[data-proyecto-id="2"] .main-image img {
 }
 
 body[data-proyecto-id="3"] .main-image img {
-  object-fit: cover !important;
+  object-fit: contain !important;
   object-position: center center;
   background: #dceef5;
+  image-rendering: auto;
 }
 
 body[data-proyecto-id="2"] .thumbnails,

@@ -93,10 +93,10 @@ const PROYECTOS = [
     tools: 'Figma',
     galleryContain: true,
     gallery: [
-      { src: 'IMAGENES/totem-cafe.jpg', thumb: 'IMAGENES/totem-cafe-thumb.jpg', alt: 'Totem de Café - Menú principal' },
-      { src: 'IMAGENES/totem-recarga.jpg', thumb: 'IMAGENES/totem-recarga-thumb.jpg', alt: 'Recarga completada Totem de Café' },
-      { src: 'IMAGENES/totem-pago.jpg', thumb: 'IMAGENES/totem-pago-thumb.jpg', alt: 'Pago Totem de Café' },
-      { src: 'IMAGENES/totem-compra.jpg', thumb: 'IMAGENES/totem-compra-thumb.jpg', alt: 'Gracias por su compra Totem de Café' }
+      { src: 'IMAGENES/totem-cafe-hq.png', thumb: 'IMAGENES/totem-cafe-thumb.jpg', alt: 'Totem de Café - Menú principal' },
+      { src: 'IMAGENES/totem-recarga-hq.png', thumb: 'IMAGENES/totem-recarga-thumb.jpg', alt: 'Recarga completada Totem de Café' },
+      { src: 'IMAGENES/totem-pago-hq.png', thumb: 'IMAGENES/totem-pago-thumb.jpg', alt: 'Pago Totem de Café' },
+      { src: 'IMAGENES/totem-compra-hq.png', thumb: 'IMAGENES/totem-compra-thumb.jpg', alt: 'Gracias por su compra Totem de Café' }
     ],
     processTitle: 'Cómo se pensó este proyecto',
     process: [
