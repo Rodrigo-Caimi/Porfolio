@@ -1390,7 +1390,7 @@ textarea {
 
 @media (max-width: 920px) {
   :root {
-    --gutter: 24px;
+    --gutter: 32px;
     --header-h: 64px;
   }
 
@@ -1453,7 +1453,7 @@ textarea {
     gap: 36px;
     max-width: 100%;
     width: 100%;
-    padding: 0 var(--gutter);
+    padding: 0;
     box-sizing: border-box;
   }
 
@@ -1461,39 +1461,67 @@ textarea {
     justify-self: center;
     width: 100%;
     max-width: 640px;
-    padding-inline: 4px;
+    padding-inline: var(--gutter);
     box-sizing: border-box;
   }
 
   .hero .desc {
     margin-left: auto;
     margin-right: auto;
-    max-width: 34em;
+    max-width: 32em;
+    padding-inline: 0;
   }
 
   .hero .cta {
+    justify-content: center;
+    flex-direction: column;
+    align-items: stretch;
+    width: 100%;
+    max-width: 300px;
+    margin-inline: auto;
+    gap: 12px;
+  }
+
+  .hero .btn {
+    width: 100%;
     justify-content: center;
   }
 
   .hero-image {
     justify-self: center;
-    width: min(320px, 70vw);
+    width: min(320px, calc(100% - (var(--gutter) * 2)));
   }
 
   section.hero {
     min-height: auto;
-    padding: 28px var(--gutter) 36px;
+    padding: 28px 0 36px;
     width: 100%;
     max-width: none;
     box-sizing: border-box;
   }
 
   .hero-name {
-    font-size: clamp(42px, 9vw, 60px);
+    font-size: clamp(40px, 9vw, 56px);
+    padding-inline: 4px;
   }
 
   .hero-role {
     font-size: clamp(17px, 4.2vw, 22px);
+    padding-inline: 4px;
+  }
+
+  /* Misma altura de imagen en todas las cards (evita Don Pascual más alto) */
+  .card-third .thumb,
+  .card-pair .thumb {
+    flex: 0 0 auto;
+    aspect-ratio: 16 / 9;
+    min-height: 0;
+  }
+
+  .card-third,
+  .card-pair {
+    min-height: 0;
+    height: auto;
   }
 
   form,
@@ -1543,7 +1571,7 @@ textarea {
 
 @media (max-width: 640px) {
   :root {
-    --gutter: 22px;
+    --gutter: 28px;
   }
 
   section {
@@ -1551,6 +1579,7 @@ textarea {
   }
 
   .hero .cta {
+    max-width: 100%;
     gap: 12px;
   }
 
@@ -1568,15 +1597,20 @@ textarea {
 
   .work-container {
     grid-template-columns: 1fr;
-    gap: 12px;
+    gap: 14px;
   }
 
   .card-third,
   .card-pair {
     grid-column: span 1;
     grid-row: span 1;
-    min-height: 200px;
+    min-height: 0;
     height: auto;
+  }
+
+  .card-third .thumb,
+  .card-pair .thumb {
+    aspect-ratio: 16 / 9;
   }
 
   .steps {
