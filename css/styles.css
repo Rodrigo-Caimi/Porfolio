@@ -2260,6 +2260,19 @@ body[data-proyecto-id="7"] .main-image img[src*="omnibus"] {
   object-position: center 58%;
 }
 
+/* Mockup campaña: imagen completa, marco al ratio real (sin letterbox ni crop) */
+body[data-proyecto-id="7"] .main-image:has(img[src*="campana"]) {
+  height: auto;
+  aspect-ratio: 1983 / 793;
+  max-height: min(68vh, 520px);
+}
+
+body[data-proyecto-id="7"] .main-image img[src*="campana"] {
+  object-fit: contain;
+  object-position: center center;
+  background: #1a1210;
+}
+
 body[data-proyecto-id="5"] .thumbnails,
 body[data-proyecto-id="7"] .thumbnails {
   display: grid;
@@ -2317,6 +2330,12 @@ body[data-proyecto-id="7"] .golden-vertical .golden-item p {
     height: auto;
     aspect-ratio: 3 / 2;
     max-height: 58vh;
+  }
+
+  body[data-proyecto-id="7"] .main-image:has(img[src*="campana"]) {
+    height: auto;
+    aspect-ratio: 1983 / 793;
+    max-height: 48vh;
   }
 
   body[data-proyecto-id="5"] .thumbnails,
