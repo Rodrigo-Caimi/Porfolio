@@ -1550,18 +1550,6 @@ textarea {
     padding: 36px 0;
   }
 
-  #trabajos,
-  #proceso {
-    padding-left: var(--gutter);
-    padding-right: var(--gutter);
-    box-sizing: border-box;
-  }
-
-  #contacto {
-    padding-left: var(--gutter);
-    padding-right: var(--gutter);
-  }
-
   .hero .cta {
     gap: 12px;
   }
