@@ -2254,6 +2254,12 @@ body[data-proyecto-id="7"] .main-image video {
   background: #151515;
 }
 
+/* Ómnibus: recorte apaisado — llenar sin franjas negras y priorizar el aviso */
+body[data-proyecto-id="7"] .main-image img[src*="omnibus"] {
+  object-fit: cover;
+  object-position: center 58%;
+}
+
 body[data-proyecto-id="5"] .thumbnails,
 body[data-proyecto-id="7"] .thumbnails {
   display: grid;
@@ -2304,6 +2310,13 @@ body[data-proyecto-id="7"] .golden-vertical .golden-item p {
   body[data-proyecto-id="5"] .main-image,
   body[data-proyecto-id="7"] .main-image {
     height: 520px;
+  }
+
+  /* Marco acorde al recorte del bondi: sin letterbox y con el aviso legible */
+  body[data-proyecto-id="7"] .main-image:has(img[src*="omnibus"]) {
+    height: auto;
+    aspect-ratio: 3 / 2;
+    max-height: 58vh;
   }
 
   body[data-proyecto-id="5"] .thumbnails,

@@ -297,7 +297,7 @@ const PROYECTOS = [
       { src: 'IMAGENES/don-pascual-campana.jpg', thumb: 'IMAGENES/don-pascual-campana-thumb.jpg', alt: 'Mockup terminado campaña Don Pascual' },
       { src: 'IMAGENES/don-pascual-botella.jpg', thumb: 'IMAGENES/don-pascual-botella-thumb.jpg', alt: 'Botella Don Pascual Chardonnay 2026' },
       { src: 'IMAGENES/don-pascual-etiqueta.jpg', thumb: 'IMAGENES/don-pascual-etiqueta-thumb.jpg', alt: 'Etiqueta con ilustración Don Pascual' },
-      { src: 'IMAGENES/don-pascual-omnibus.jpg', thumb: 'IMAGENES/don-pascual-omnibus-thumb.jpg', alt: 'Mockup publicidad en ómnibus Don Pascual' }
+      { src: 'IMAGENES/don-pascual-omnibus.jpg?v=20260807g', thumb: 'IMAGENES/don-pascual-omnibus-thumb.jpg?v=20260807g', alt: 'Mockup publicidad en ómnibus Don Pascual' }
     ],
     processTitle: 'Cómo se pensó este proyecto',
     process: [
