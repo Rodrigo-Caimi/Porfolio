@@ -198,14 +198,142 @@ header.is-nav-open .nav-toggle-bars::after {
   justify-content: center;
   background: #fff;
   color: var(--brand);
-  transition: background .15s ease, border-color .15s ease, transform .1s ease, color .15s ease;
+  transition: background .2s ease, border-color .2s ease, transform .2s ease, color .2s ease, box-shadow .2s ease;
+  -webkit-tap-highlight-color: transparent;
 }
 
-.icon-btn:hover {
+.icon-btn svg {
+  display: block;
+  overflow: visible;
+  transform-origin: 50% 50%;
+  transition: transform .28s cubic-bezier(0.34, 1.35, 0.64, 1);
+}
+
+.icon-btn .icon-part {
+  transform-box: fill-box;
+  transform-origin: center;
+  transition: transform .32s cubic-bezier(0.34, 1.4, 0.64, 1);
+}
+
+.icon-btn:hover,
+.icon-btn:focus-visible {
   background: rgba(107, 140, 114, 0.06);
   border-color: var(--brand);
   color: var(--brand);
-  transform: translateY(-1px);
+  outline: none;
+}
+
+.icon-btn:focus-visible {
+  box-shadow: 0 0 0 3px rgba(107, 140, 114, 0.22);
+}
+
+/* WhatsApp: leve bounce */
+@keyframes icon-wa-nudge {
+  0% { transform: translateY(0) scale(1); }
+  35% { transform: translateY(-1.5px) scale(1.06); }
+  70% { transform: translateY(0.5px) scale(0.98); }
+  100% { transform: translateY(0) scale(1); }
+}
+
+/* LinkedIn: la cabeza hace un pop suave */
+@keyframes icon-li-head {
+  0% { transform: translateY(0); }
+  40% { transform: translateY(-1.6px); }
+  100% { transform: translateY(0); }
+}
+
+@keyframes icon-li-body {
+  0% { transform: scale(1); }
+  40% { transform: scale(1.04); }
+  100% { transform: scale(1); }
+}
+
+/* Correo: la solapa se levanta un poco */
+@keyframes icon-mail-flap {
+  0% { transform: translateY(0); }
+  45% { transform: translateY(-2px); }
+  100% { transform: translateY(0); }
+}
+
+@keyframes icon-mail-body {
+  0% { transform: translateY(0); }
+  45% { transform: translateY(0.6px); }
+  100% { transform: translateY(0); }
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .icon-btn--wa:hover svg,
+  .icon-btn--wa:focus-visible svg {
+    animation: icon-wa-nudge 0.48s cubic-bezier(0.34, 1.35, 0.64, 1);
+  }
+
+  .icon-btn--li:hover .icon-li-head,
+  .icon-btn--li:focus-visible .icon-li-head {
+    animation: icon-li-head 0.45s cubic-bezier(0.34, 1.4, 0.64, 1);
+  }
+
+  .icon-btn--li:hover .icon-li-body,
+  .icon-btn--li:focus-visible .icon-li-body {
+    animation: icon-li-body 0.45s cubic-bezier(0.34, 1.4, 0.64, 1);
+  }
+
+  .icon-btn--mail:hover .icon-mail-flap,
+  .icon-btn--mail:focus-visible .icon-mail-flap {
+    animation: icon-mail-flap 0.42s cubic-bezier(0.34, 1.35, 0.64, 1);
+  }
+
+  .icon-btn--mail:hover .icon-mail-body,
+  .icon-btn--mail:focus-visible .icon-mail-body {
+    animation: icon-mail-body 0.42s cubic-bezier(0.34, 1.35, 0.64, 1);
+  }
+
+  .icon-btn:hover {
+    transform: translateY(-1px);
+  }
+}
+
+/* Tap / active: móvil, tablet y click */
+.icon-btn--wa:active svg,
+.icon-btn--wa.is-animating svg {
+  animation: icon-wa-nudge 0.48s cubic-bezier(0.34, 1.35, 0.64, 1);
+}
+
+.icon-btn--li:active .icon-li-head,
+.icon-btn--li.is-animating .icon-li-head {
+  animation: icon-li-head 0.45s cubic-bezier(0.34, 1.4, 0.64, 1);
+}
+
+.icon-btn--li:active .icon-li-body,
+.icon-btn--li.is-animating .icon-li-body {
+  animation: icon-li-body 0.45s cubic-bezier(0.34, 1.4, 0.64, 1);
+}
+
+.icon-btn--mail:active .icon-mail-flap,
+.icon-btn--mail.is-animating .icon-mail-flap {
+  animation: icon-mail-flap 0.42s cubic-bezier(0.34, 1.35, 0.64, 1);
+}
+
+.icon-btn--mail:active .icon-mail-body,
+.icon-btn--mail.is-animating .icon-mail-body {
+  animation: icon-mail-body 0.42s cubic-bezier(0.34, 1.35, 0.64, 1);
+}
+
+.icon-btn:active {
+  transform: scale(0.96);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .icon-btn,
+  .icon-btn svg,
+  .icon-btn .icon-part {
+    transition: none !important;
+    animation: none !important;
+  }
+
+  .icon-btn:hover,
+  .icon-btn:active {
+    transform: none;
+  }
 }
 
 /* ============================================

@@ -29,6 +29,23 @@
 })();
 
 (function () {
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+
+  document.querySelectorAll('.icon-btn').forEach(function (btn) {
+    btn.addEventListener('pointerdown', function () {
+      btn.classList.remove('is-animating');
+      // reflow para reiniciar la animación en taps seguidos
+      void btn.offsetWidth;
+      btn.classList.add('is-animating');
+    });
+
+    btn.addEventListener('animationend', function () {
+      btn.classList.remove('is-animating');
+    });
+  });
+})();
+
+(function () {
   var root = document.querySelector('[data-hero-morph]');
   if (!root) return;
 
