@@ -76,6 +76,29 @@
     return 'https://drive.google.com/file/d/' + match[1] + '/view';
   }
 
+  // iOS/móvil: el embed de Drive deja play/controles trabados a mitad de pantalla
+  function shouldOpenDriveExternally() {
+    const ua = navigator.userAgent || '';
+    const isIOS = /iPad|iPhone|iPod/.test(ua) ||
+      (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1);
+    const isMobileViewport = window.matchMedia('(max-width: 920px)').matches;
+    const coarsePointer = window.matchMedia('(pointer: coarse)').matches;
+    return isIOS || isMobileViewport || coarsePointer;
+  }
+
+  function drivePosterHtml(preview, viewUrl, poster, alt, mainClass, eager) {
+    const label = shouldOpenDriveExternally() ? 'Ver video en Drive' : 'Reproducir video';
+    const eagerAttrs = eager
+      ? ' decoding="async" fetchpriority="high"'
+      : ' decoding="async"';
+    return (
+      '<button type="button" class="drive-poster" data-drive-preview="' + (preview || '') + '" data-drive-view="' + (viewUrl || '') + '" data-drive-title="' + (alt || 'Video') + '" aria-label="' + label + '">' +
+        '<img id="main-media" class="' + (mainClass || '') + '" src="' + (poster || '') + '" alt="' + (alt || '') + '"' + eagerAttrs + ' />' +
+        '<span class="drive-poster-label">' + label + '</span>' +
+      '</button>'
+    );
+  }
+
   function renderGallery(container, proyecto) {
     if (!container || !proyecto.gallery.length) return;
 
@@ -87,17 +110,8 @@
       const preview = drivePreviewUrl(first.src);
       const viewUrl = driveViewUrl(first.src);
       const poster = asset(first.poster || '');
-      if (preview) {
-        mainMedia =
-          '<button type="button" class="drive-poster" data-drive-preview="' + preview + '" data-drive-title="' + (first.alt || 'Video') + '" aria-label="Reproducir ' + (first.alt || 'video') + '">' +
-            '<img id="main-media" class="' + mainClass + '" src="' + poster + '" alt="' + first.alt + '" decoding="async" fetchpriority="high" />' +
-          '</button>';
-      } else if (viewUrl) {
-        mainMedia =
-          '<a class="drive-fallback" href="' + viewUrl + '" target="_blank" rel="noopener" aria-label="' + first.alt + '">' +
-            '<img id="main-media" class="' + mainClass + '" src="' + poster + '" alt="' + first.alt + '" decoding="async" />' +
-            '<span class="drive-fallback-label">Ver video en Drive</span>' +
-          '</a>';
+      if (preview || viewUrl) {
+        mainMedia = drivePosterHtml(preview, viewUrl, poster, first.alt, mainClass, true);
       } else {
         mainMedia =
           '<div class="drive-fallback">' +
@@ -141,23 +155,27 @@
 
   function loadDriveEmbed(mainWrap, preview, title) {
     if (!mainWrap || !preview) return;
+    mainWrap.classList.add('is-drive-playing');
     mainWrap.innerHTML =
-      '<iframe id="main-media" class="drive-embed" src="' + preview + '" title="' + (title || 'Video') + '" allow="autoplay" allowfullscreen></iframe>';
+      '<iframe id="main-media" class="drive-embed" src="' + preview + '" title="' + (title || 'Video') + '" allow="autoplay; fullscreen; encrypted-media; picture-in-picture" allowfullscreen webkitallowfullscreen playsinline></iframe>';
+  }
+
+  function openDriveExternal(viewUrl, preview) {
+    const url = viewUrl || (preview ? String(preview).replace('/preview', '/view') : '');
+    if (!url) return false;
+    window.open(url, '_blank', 'noopener');
+    return true;
   }
 
   function showMainMedia(mainWrap, type, src, poster, alt, mainClass, viewUrl) {
     if (!mainWrap) return;
+    mainWrap.classList.remove('is-drive-playing');
 
     if (type === 'drive') {
-      if (src) {
-        // Poster + click: no cargar el iframe hasta que el usuario lo pida
-        mainWrap.innerHTML =
-          '<button type="button" class="drive-poster" data-drive-preview="' + src + '" data-drive-title="' + (alt || 'Video') + '" aria-label="Reproducir ' + (alt || 'video') + '">' +
-            '<img id="main-media" class="' + mainClass + '" src="' + (poster || '') + '" alt="' + (alt || '') + '" decoding="async" />' +
-          '</button>';
+      if (src || viewUrl) {
+        // Poster + click: en móvil abre Drive; en desktop carga iframe al pedir
+        mainWrap.innerHTML = drivePosterHtml(src, viewUrl, poster, alt, mainClass, false);
         bindDrivePoster(mainWrap);
-      } else if (viewUrl) {
-        window.open(viewUrl, '_blank', 'noopener');
       } else {
         mainWrap.innerHTML =
           '<div class="drive-fallback">' +
@@ -169,7 +187,7 @@
 
     if (type === 'video') {
       mainWrap.innerHTML =
-        '<video id="main-media" class="' + mainClass + '" controls playsinline autoplay poster="' + (poster || '') + '" src="' + src + '"></video>';
+        '<video id="main-media" class="' + mainClass + '" controls playsinline webkit-playsinline autoplay poster="' + (poster || '') + '" src="' + src + '"></video>';
       return;
     }
 
@@ -200,7 +218,22 @@
     if (!btn || btn.dataset.bound === '1') return;
     btn.dataset.bound = '1';
     btn.addEventListener('click', function () {
-      loadDriveEmbed(mainWrap, btn.getAttribute('data-drive-preview'), btn.getAttribute('data-drive-title'));
+      const preview = btn.getAttribute('data-drive-preview') || '';
+      const viewUrl = btn.getAttribute('data-drive-view') || '';
+      const title = btn.getAttribute('data-drive-title') || 'Video';
+
+      // Evita el bug de iPhone: UI de Drive atrapada a mitad de pantalla
+      if (shouldOpenDriveExternally()) {
+        openDriveExternal(viewUrl, preview);
+        return;
+      }
+
+      if (preview) {
+        loadDriveEmbed(mainWrap, preview, title);
+        return;
+      }
+
+      openDriveExternal(viewUrl, preview);
     });
   }
 

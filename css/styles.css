@@ -1730,6 +1730,15 @@ textarea {
   height: 100%;
   border: 0;
   background: #111;
+  /* Evita que Safari recorte controles del player */
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
+}
+
+.main-image.is-drive-playing {
+  overflow: visible;
+  border-radius: 12px;
+  z-index: 2;
 }
 
 .drive-fallback,
@@ -1743,6 +1752,7 @@ textarea {
   border: 0;
   background: transparent;
   cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
 }
 
 .drive-fallback img,
@@ -1752,20 +1762,25 @@ textarea {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  pointer-events: none;
 }
 
-.drive-fallback-label {
+.drive-fallback-label,
+.drive-poster-label {
   position: absolute;
   left: 50%;
   bottom: 18px;
   transform: translateX(-50%);
-  background: rgba(0, 0, 0, 0.7);
+  background: rgba(0, 0, 0, 0.72);
   color: #fff;
   padding: 10px 14px;
   border-radius: 999px;
   font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 0.01em;
   white-space: nowrap;
   z-index: 2;
+  pointer-events: none;
 }
 
 .drive-poster::after {
@@ -1780,6 +1795,7 @@ textarea {
   background: rgba(0, 0, 0, 0.55);
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
   z-index: 2;
+  pointer-events: none;
 }
 
 .drive-poster::before {
@@ -1794,6 +1810,25 @@ textarea {
   border-width: 12px 0 12px 20px;
   border-color: transparent transparent transparent #fff;
   z-index: 3;
+  pointer-events: none;
+}
+
+@media (max-width: 920px) {
+  .main-image {
+    height: min(52vh, 420px);
+    min-height: 240px;
+  }
+
+  .main-image.is-drive-playing {
+    /* No embeber en móvil; por si queda iframe residual */
+    overflow: hidden;
+  }
+
+  .drive-poster-label {
+    bottom: 14px;
+    font-size: 13px;
+    padding: 9px 12px;
+  }
 }
 
 /* Solo espaciado header → cajas (igual en todos, como Café). No cambia layout de galerías. */
@@ -2189,7 +2224,8 @@ body[data-proyecto-id="7"] .golden-vertical .golden-item p {
 
 @media (max-width: 920px) {
   .main-image {
-    height: 520px;
+    height: min(52vh, 420px);
+    min-height: 240px;
   }
 
   .gallery {
