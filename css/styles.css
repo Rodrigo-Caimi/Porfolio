@@ -1644,6 +1644,41 @@ textarea {
 /* ============================================
    DETALLE DE TRABAJO
    ============================================ */
+.project-back-bar {
+  max-width: var(--container);
+  width: 100%;
+  margin: 0 auto;
+  padding: 16px var(--gutter) 0;
+  box-sizing: border-box;
+}
+
+.project-back {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 999px;
+  border: 1px solid var(--line);
+  background: #fff;
+  color: var(--ink, #1C1C1C);
+  transition: background .15s ease, border-color .15s ease, color .15s ease, transform .1s ease;
+}
+
+.project-back:hover {
+  background: rgba(107, 140, 114, 0.06);
+  border-color: var(--brand);
+  color: var(--brand);
+}
+
+.project-back:active {
+  transform: scale(0.96);
+}
+
+.project-back svg {
+  display: block;
+}
+
 .work-detail-hero {
   max-width: var(--container);
   width: 100%;
@@ -1769,7 +1804,7 @@ body[data-proyecto-id="4"] .work-detail-hero,
 body[data-proyecto-id="5"] .work-detail-hero,
 body[data-proyecto-id="6"] .work-detail-hero,
 body[data-proyecto-id="7"] .work-detail-hero {
-  padding-top: 48px !important;
+  padding-top: 12px !important;
 }
 
 body[data-proyecto-id="1"] .gallery,
