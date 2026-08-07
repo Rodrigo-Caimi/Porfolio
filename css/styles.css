@@ -1390,7 +1390,7 @@ textarea {
 
 @media (max-width: 920px) {
   :root {
-    --gutter: 16px;
+    --gutter: 24px;
     --header-h: 64px;
   }
 
@@ -1454,17 +1454,21 @@ textarea {
     max-width: 100%;
     width: 100%;
     padding: 0 var(--gutter);
+    box-sizing: border-box;
   }
 
   .hero-copy {
     justify-self: center;
     width: 100%;
     max-width: 640px;
+    padding-inline: 4px;
+    box-sizing: border-box;
   }
 
   .hero .desc {
     margin-left: auto;
     margin-right: auto;
+    max-width: 34em;
   }
 
   .hero .cta {
@@ -1478,9 +1482,10 @@ textarea {
 
   section.hero {
     min-height: auto;
-    padding: 28px 0 36px;
+    padding: 28px var(--gutter) 36px;
     width: 100%;
     max-width: none;
+    box-sizing: border-box;
   }
 
   .hero-name {
@@ -1497,6 +1502,30 @@ textarea {
     width: min(100%, 560px);
     margin-left: auto;
     margin-right: auto;
+    padding-inline: 0;
+    box-sizing: border-box;
+  }
+
+  .work-section,
+  .process-section,
+  .about-section,
+  .project-meta-section,
+  .project-actions-section,
+  .golden-section {
+    padding-left: var(--gutter);
+    padding-right: var(--gutter);
+    box-sizing: border-box;
+  }
+
+  .section-lead,
+  .contact-intro,
+  #contacto > p {
+    padding-inline: 4px;
+    box-sizing: border-box;
+  }
+
+  .about-intro {
+    padding-inline: 4px;
   }
 
   .about-content {
@@ -1506,12 +1535,40 @@ textarea {
   .steps {
     max-width: 640px;
     gap: 14px;
+    padding-inline: 0;
+    width: 100%;
+    box-sizing: border-box;
   }
 }
 
 @media (max-width: 640px) {
+  :root {
+    --gutter: 22px;
+  }
+
   section {
     padding: 36px 0;
+  }
+
+  #trabajos,
+  #proceso {
+    padding-left: var(--gutter);
+    padding-right: var(--gutter);
+    box-sizing: border-box;
+  }
+
+  #contacto {
+    padding-left: var(--gutter);
+    padding-right: var(--gutter);
+  }
+
+  .hero .cta {
+    gap: 12px;
+  }
+
+  .hero .btn {
+    width: 100%;
+    justify-content: center;
   }
 
   #trabajos h2,
