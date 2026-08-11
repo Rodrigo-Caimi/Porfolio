@@ -1382,7 +1382,22 @@ a.card:active {
   font-size: 42px;
   margin-bottom: 24px;
   text-align: center;
-  width: 100%;
+  position: relative;
+  display: inline-block;
+  padding-bottom: 16px;
+  width: auto;
+}
+
+#contacto h2::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 4px;
+  background: var(--brand);
+  border-radius: 2px;
 }
 
 #contacto > p,
@@ -1838,11 +1853,42 @@ textarea {
   display: block;
 }
 
+.project-detail-title {
+  max-width: var(--container);
+  width: 100%;
+  margin: 8px auto 0;
+  padding: 4px var(--gutter) 0;
+  box-sizing: border-box;
+  text-align: center;
+}
+
+.project-detail-title h1 {
+  font-size: clamp(32px, 4.5vw, 42px);
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+  margin: 0 auto;
+  position: relative;
+  display: inline-block;
+  padding-bottom: 16px;
+}
+
+.project-detail-title h1::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 4px;
+  background: var(--brand);
+  border-radius: 2px;
+}
+
 .work-detail-hero {
   max-width: var(--container);
   width: 100%;
   margin: 0 auto;
-  padding: 0 var(--gutter);
+  padding: 28px var(--gutter) 0;
   /* section global usa align-items:center; sin esto la galería se colapsa */
   align-items: stretch;
 }
@@ -1998,7 +2044,7 @@ body[data-proyecto-id="4"] .work-detail-hero,
 body[data-proyecto-id="5"] .work-detail-hero,
 body[data-proyecto-id="6"] .work-detail-hero,
 body[data-proyecto-id="7"] .work-detail-hero {
-  padding-top: 12px !important;
+  padding-top: 28px !important;
 }
 
 body[data-proyecto-id="1"] .gallery,

@@ -369,12 +369,18 @@
       '<div class="other-projects-grid">' + cards + '</div>';
   }
 
+  function renderProjectTitle(container, proyecto) {
+    if (!container || !proyecto) return;
+    container.innerHTML = '<h1>' + proyecto.title + '</h1>';
+  }
+
   function renderProjectDetail(proyectoId) {
     const proyecto = getProyecto(proyectoId);
     if (!proyecto) return;
 
     document.title = proyecto.title + ' — Rodrigo Caimi';
 
+    renderProjectTitle(document.querySelector('[data-proyecto-title]'), proyecto);
     renderGallery(document.querySelector('[data-proyecto-gallery]'), proyecto);
     renderMeta(document.querySelector('[data-proyecto-meta]'), proyecto);
     renderProcess(document.querySelector('[data-proyecto-process]'), proyecto);
