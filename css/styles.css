@@ -29,7 +29,8 @@ body {
   color: var(--fg);
   background: var(--bg);
   line-height: 1.6;
-  overflow-x: hidden;
+  height: 100%;
+  overflow: hidden; /* evita scroll del body (la franja blanca del footer) */
 }
 
 body,
@@ -340,10 +341,14 @@ header.is-nav-open .nav-toggle-bars::after {
    LAYOUT PRINCIPAL
    ============================================ */
 main {
-  height: 100vh;
-  overflow-y: scroll;
+  height: 100%;
+  height: 100dvh;
+  overflow-y: auto;
+  overscroll-behavior-y: none;
+  -webkit-overflow-scrolling: touch;
   padding-top: var(--header-h);
   scroll-behavior: smooth;
+  background: var(--bg);
 }
 
 section {
@@ -2397,10 +2402,10 @@ body[data-proyecto-id="7"] .golden-vertical .golden-item p {
 /* ============================================
    FOOTER
    ============================================ */
+/* El footer actual está vacío; si queda fuera de main genera una franja
+   blanca al overscroll. Lo ocultamos hasta que tenga contenido real. */
 footer {
-  width: 100%;
-  border-top: 1px solid var(--line);
-  background: rgba(255, 255, 255, 0.8);
+  display: none;
 }
 
 .footer-inner {
