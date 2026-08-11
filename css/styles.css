@@ -365,6 +365,26 @@ section.hero {
   min-height: calc(100dvh - var(--header-h));
   padding: clamp(32px, 4vh, 56px) 0;
   width: 100%;
+  position: relative;
+  z-index: 1;
+  background: var(--bg);
+  /* Sombra suave: el hero se siente un poco por encima de Trabajos */
+  box-shadow: 0 18px 40px -28px rgba(28, 28, 28, 0.22);
+}
+
+section.hero::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 28px;
+  pointer-events: none;
+  background: linear-gradient(
+    to bottom,
+    rgba(28, 28, 28, 0) 0%,
+    rgba(28, 28, 28, 0.035) 100%
+  );
 }
 
 /* ============================================
@@ -606,6 +626,12 @@ section.hero {
 #trabajos,
 #proceso {
   padding: 48px 0;
+}
+
+#trabajos {
+  padding-top: 64px;
+  position: relative;
+  z-index: 0;
 }
 
 #contacto {
