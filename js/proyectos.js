@@ -1,7 +1,7 @@
 const PROYECTOS = [
   {
     id: 1,
-    slug: 'proyecto-1.html',
+    slug: 'horizonte.html',
     title: 'Horizonte',
     category: 'Branding',
     cardClass: 'card-pair',
@@ -42,7 +42,7 @@ const PROYECTOS = [
   },
   {
     id: 2,
-    slug: 'proyecto-2.html',
+    slug: 'mayo-amarillo.html',
     title: 'Mayo Amarillo',
     category: 'Campaña',
     cardClass: 'card-pair',
@@ -83,7 +83,7 @@ const PROYECTOS = [
   },
   {
     id: 3,
-    slug: 'proyecto-3.html',
+    slug: 'totem-de-cafe.html',
     title: 'Totem de Café',
     category: 'UX/UI',
     cardClass: 'card-third',
@@ -133,7 +133,7 @@ const PROYECTOS = [
   },
   {
     id: 4,
-    slug: 'proyecto-4.html',
+    slug: 'proyecto-fotografico.html',
     title: 'Proyecto Fotográfico',
     category: 'Fotografía',
     cardClass: 'card-pair',
@@ -174,7 +174,7 @@ const PROYECTOS = [
   },
   {
     id: 5,
-    slug: 'proyecto-5.html',
+    slug: 'campana-reel-ort.html',
     title: 'Campaña Reel ORT',
     category: 'Audiovisual',
     cardClass: 'card-pair',
@@ -226,7 +226,7 @@ const PROYECTOS = [
   },
   {
     id: 6,
-    slug: 'proyecto-6.html',
+    slug: 'noir-estudio.html',
     title: 'Noir Estudio',
     category: 'Branding',
     cardClass: 'card-third',
@@ -276,7 +276,7 @@ const PROYECTOS = [
   },
   {
     id: 7,
-    slug: 'proyecto-7.html',
+    slug: 'don-pascual.html',
     title: 'Don Pascual',
     category: 'Campaña',
     cardClass: 'card-third',
