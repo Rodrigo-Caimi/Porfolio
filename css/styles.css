@@ -106,9 +106,39 @@ header {
   font-weight: 500;
   transition: color .2s ease;
   white-space: nowrap;
+  position: relative;
+  padding-bottom: 2px;
+}
+
+.site-nav a::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 1px;
+  background: var(--brand);
+  opacity: 0;
+  transform: scaleX(0.35);
+  transform-origin: center;
+  transition: opacity .2s ease, transform .22s ease;
+  pointer-events: none;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .site-nav a:hover::after,
+  .site-nav a:focus-visible::after {
+    opacity: 1;
+    transform: scaleX(1);
+  }
 }
 
 .site-nav a:hover {
+  color: var(--brand-hover);
+}
+
+.site-nav a:focus-visible {
+  outline: none;
   color: var(--brand-hover);
 }
 
